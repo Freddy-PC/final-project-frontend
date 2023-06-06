@@ -1,0 +1,36 @@
+@font-face {
+  font-family: "Inter-Bold";
+  src: url("../../fonts/Inter-SemiBold.ttf");
+}
+
+.header {
+  margin-top: 30px;
+  border-bottom: 1px solid;
+  border-bottom-color: rgba(84, 84, 84, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 20px 0 10px 0;
+}
+.header__container {
+  display: flex;
+  align-items: center;
+}
+.header__logo {
+  width: 40px;
+  height: 40px;
+}
+.header__logo-name {
+  margin: 0 0 0 5px;
+  font-family: "Inter-Bold", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 40px;
+  color: ghostwhite;
+}
+.nav__container {
+  display: flex;
+  justify-content: flex-end;
+}

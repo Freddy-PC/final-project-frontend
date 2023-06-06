@@ -1,0 +1,70 @@
+@font-face {
+  font-family: "Inter-Bold";
+  src: url("../../fonts/Inter-SemiBold.ttf");
+}
+
+.main {
+  padding: 80px 0 80px 0;
+}
+.main__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main__title {
+  font-family: "Inter-Bold", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 50px;
+  margin: 0;
+  margin: 0px 0px 20px;
+  color: ghostwhite;
+}
+.main__paragraph {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  margin: 0px 0px 20px;
+  color: ghostwhite;
+  text-align: center;
+}
+.search {
+  position: relative;
+}
+.search__input {
+  min-width: 610px;
+  min-height: 65px;
+  padding: 0 0 0 25px;
+  border-radius: 50px;
+  border: 1px solid #eee;
+  transition: 0.3s border-color;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  box-sizing: border-box;
+}
+.search__input:hover {
+  border: 1px solid #aaa;
+}
+.search__button {
+  color: white;
+  background-color: #2f71e5;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  min-width: 170px;
+  min-height: 65px;
+  border-radius: 50px;
+  position: absolute;
+  right: -1px;
+}
+.search__button:hover {
+  cursor: pointer;
+  transition: 0.7s;
+  opacity: 90%;
+}

@@ -1,38 +1,25 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: "Inter";
+  src: url("../../fonts/Inter-Regular.ttf");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+  font-family: "Inter", "Arial", sans-serif;
+}
+.app__background {
+  background: url("../../images/pokemon-background.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 80px;
+}
+.page__section {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media screen and (max-width: 1200px) {
+  .page__section {
+    width: calc(100% - 40px);
   }
 }
