@@ -10,13 +10,16 @@ import api from "../../utils/pokeapi";
 function App() {
   const [pokemonData, setPokemonData] = useState([]); // data
   const [query, setQuery] = useState(""); // input
-  const [result, setResult] = useState(false);
+  const [ifToggleResult, setIfToggleResult] = useState(false); // search result
+  const [isLoading, setIsLoading] = useState(false); // preloader????
 
   const inputRef = useRef();
 
   // Get pokemon from api via input
+  // Loading state is true during api call & false after api call is complete
   function onSubmit(e) {
     e.preventDefault();
+    setIsLoading(true);
 
     // const value = inputRef.current.value;
     api
@@ -26,7 +29,10 @@ function App() {
         console.log(pokearray);
         setPokemonData(pokearray);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setIsLoading(false);
+      });
 
     inputRef.current.value = "";
   }
@@ -43,10 +49,12 @@ function App() {
           setQuery={setQuery}
           onSubmit={onSubmit}
           inputRef={inputRef}
-          pokemonData={pokemonData}
+          setIfToggleResult={setIfToggleResult}
         />
       </div>
-      <CardData pokemonData={pokemonData} />
+      {ifToggleResult && (
+        <CardData isLoading={isLoading} pokemonData={pokemonData} />
+      )}
       <About></About>
       <Footer></Footer>
     </div>

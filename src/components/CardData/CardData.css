@@ -60,3 +60,6 @@
   width: 150px;
   margin-bottom: 25px;
 }
+.card__pokepic-hidden {
+  display: none;
+}

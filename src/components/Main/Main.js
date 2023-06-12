@@ -2,7 +2,9 @@ import React from "react";
 import "./Main.css";
 import "../App/App.css";
 
-function Main({ query, setQuery, onSubmit, inputRef }) {
+// SetQuery is assigned the value of input field
+// setIfToggleResult is false at start so result doesn't show in other component
+function Main({ query, setQuery, onSubmit, inputRef, setIfToggleResult }) {
   return (
     <main className="main page__section">
       <div className="main__container">
@@ -23,7 +25,11 @@ function Main({ query, setQuery, onSubmit, inputRef }) {
             onChange={(e) => setQuery(e.target.value)}
             ref={inputRef}
           ></input>
-          <button className="search__button" type="submit">
+          <button
+            className="search__button"
+            type="submit"
+            onClick={setIfToggleResult}
+          >
             Search
           </button>
         </form>
