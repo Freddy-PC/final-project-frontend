@@ -1,0 +1,62 @@
+@font-face {
+  font-family: "Inter-Bold";
+  src: url("../../fonts/Inter-SemiBold.ttf");
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 0 80px;
+  background-color: #f5f6f5;
+}
+.results__header {
+  margin: 0 0 30px 0;
+}
+.card__container {
+  opacity: 90%;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.card__name {
+  font-family: "Inter-Bold", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 50px;
+  margin: 10px 0 10px 0;
+}
+
+.card__type-container {
+  display: flex;
+  flex-direction: row;
+}
+.card__type {
+  font-family: "Inter-Bold", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 30px;
+}
+.card__type-display {
+  margin-left: 10px;
+  font-family: "Inter-Bold", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.card__type-blue {
+  color: blue;
+}
+.card__pokepic {
+  width: 150px;
+  margin-bottom: 25px;
+}

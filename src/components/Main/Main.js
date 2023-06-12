@@ -2,7 +2,7 @@ import React from "react";
 import "./Main.css";
 import "../App/App.css";
 
-function Main() {
+function Main({ query, setQuery, onSubmit, inputRef }) {
   return (
     <main className="main page__section">
       <div className="main__container">
@@ -11,20 +11,19 @@ function Main() {
           Find information about any Pokemon. Type the Pokemon's name or id
           number according to the national dex!
         </p>
-        <form className="search">
+        <form className="search" onSubmit={onSubmit}>
           <input
-            class="search__input"
-            name=""
-            type=""
-            id=""
+            className="search__input"
+            name="search"
+            type="search"
+            id="search"
             placeholder="Enter name or id number"
             required
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            ref={inputRef}
           ></input>
-          <button
-            class="search__button modal__button_disabled"
-            type="submit"
-            disabled
-          >
+          <button className="search__button" type="submit">
             Search
           </button>
         </form>

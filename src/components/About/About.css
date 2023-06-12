@@ -7,7 +7,7 @@
   justify-content: space-evenly;
   position: relative;
   overflow: hidden;
-  margin-bottom: 80px;
+  margin: 40px auto 40px;
 }
 .about__image {
   width: 240px px;
