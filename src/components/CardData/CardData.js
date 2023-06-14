@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 
 import "./CardData.css";
 import "../Preloader/Preloader.css";
 
-function CardData({ pokemonData, isLoading }) {
+function CardData({ pokemonData, isLoading, handleClick }) {
   // animated pics for Gen 1-5 (1-649)
   // normal pics for Gen 6-9
 
@@ -45,7 +45,7 @@ function CardData({ pokemonData, isLoading }) {
   // if it's loading the preloader will appear
   // if there is no pokemonData then a message should appear
   return (
-    <div className="cards">
+    <div className="cards" onClick={handleClick}>
       {isLoading ? (
         <>
           <div className="preloader"></div>
