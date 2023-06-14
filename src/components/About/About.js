@@ -15,7 +15,7 @@ function About() {
         </p>
         <p className="about__paragraph">
           Coding is another form of art. It's cheesy to say but this site was
-          once an idea. And now it's fully functional and aids you on your
+          once an idea. Now the fully functional website can aid you on your
           journey to become the greatest Pokemon Scholar of all time!
         </p>
         <p className="about__paragraph">

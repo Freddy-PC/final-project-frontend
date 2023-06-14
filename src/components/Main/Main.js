@@ -4,6 +4,7 @@ import "../App/App.css";
 
 // SetQuery is assigned the value of input field
 // setIfToggleResult is false at start so result doesn't show in other component
+// lowerCase() method converts uppercase values to lowercase so names are not case-sensitive
 function Main({ query, setQuery, onSubmit, inputRef, setIfToggleResult }) {
   return (
     <main className="main page__section">
@@ -22,7 +23,7 @@ function Main({ query, setQuery, onSubmit, inputRef, setIfToggleResult }) {
             placeholder="Enter name or id number"
             required
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => setQuery(e.target.value.toLowerCase())}
             ref={inputRef}
           ></input>
           <button

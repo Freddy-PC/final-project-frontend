@@ -11,7 +11,7 @@ function App() {
   const [pokemonData, setPokemonData] = useState([]); // data
   const [query, setQuery] = useState(""); // input
   const [ifToggleResult, setIfToggleResult] = useState(false); // search result
-  const [isLoading, setIsLoading] = useState(false); // preloader????
+  const [isLoading, setIsLoading] = useState(false); // preloader
 
   const inputRef = useRef();
 
@@ -21,7 +21,6 @@ function App() {
     e.preventDefault();
     setIsLoading(true);
 
-    // const value = inputRef.current.value;
     api
       .getPokemon(query)
       .then((pokearray) => {
@@ -33,13 +32,10 @@ function App() {
       .finally(() => {
         setIsLoading(false);
       });
-
+    setPokemonData(""); // Reset data for next search
     inputRef.current.value = "";
   }
 
-  // const filteredItems = pokemonData.filter((item) => {
-  //   return item.toLowerCase().includes(query.toLowerCase());
-  // });
   return (
     <div className="app">
       <div className="app__background">

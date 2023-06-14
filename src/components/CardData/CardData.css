@@ -28,7 +28,7 @@
   font-family: "Inter-Bold", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 40px;
+  font-size: 30px;
   line-height: 50px;
   margin: 10px 0 10px 0;
 }
@@ -36,12 +36,13 @@
 .card__type-container {
   display: flex;
   flex-direction: row;
+  margin-bottom: 10px;
 }
 .card__type {
   font-family: "Inter-Bold", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 30px;
+  font-size: 25px;
   line-height: 30px;
 }
 .card__type-display {
@@ -49,7 +50,7 @@
   font-family: "Inter-Bold", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 30px;
+  font-size: 25px;
   line-height: 30px;
 }
 
@@ -62,4 +63,18 @@
 }
 .card__pokepic-hidden {
   display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .card__name {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .card__type {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .card__container {
+    width: 250px;
+  }
 }
