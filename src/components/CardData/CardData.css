@@ -30,6 +30,7 @@
   font-size: 30px;
   line-height: 50px;
   margin: 10px 0 10px 0;
+  text-transform: capitalize;
 }
 
 .card__type-container {
@@ -43,6 +44,10 @@
   font-weight: 500;
   font-size: 25px;
   line-height: 30px;
+  color: ghostwhite;
+  border-radius: 5px;
+  padding: 5px;
+  text-transform: capitalize;
 }
 .card__type-display {
   margin-left: 10px;
@@ -51,10 +56,6 @@
   font-weight: 500;
   font-size: 25px;
   line-height: 30px;
-}
-
-.card__type-blue {
-  color: blue;
 }
 .card__pokepic {
   width: 150px;

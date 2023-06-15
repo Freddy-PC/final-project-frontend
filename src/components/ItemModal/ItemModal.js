@@ -1,6 +1,6 @@
 import "./ItemModal.css";
 
-function ItemModal({ pokemonData, onClose, onClick }) {
+function ItemModal({ pokemonData, onClose, onClick, firstColor, secondColor }) {
   const hasSecondType = pokemonData.types?.["1"]?.type.name;
   const cardTypeClassName = `item-modal__type ${
     hasSecondType ? "item-modal__type-display" : "item-modal__type"
@@ -43,10 +43,16 @@ function ItemModal({ pokemonData, onClose, onClick }) {
             {pokemonData.name} / {pokemonData.id}
           </p>
           <div className="item-modal__types">
-            <h2 className="item-modal__type">
+            <h2
+              className="item-modal__type"
+              style={{ backgroundColor: firstColor }}
+            >
               {pokemonData.types?.["0"].type.name}
             </h2>
-            <h2 className={cardTypeClassName}>
+            <h2
+              className={cardTypeClassName}
+              style={{ backgroundColor: secondColor }}
+            >
               {pokemonData.types?.["1"]?.type.name}
             </h2>
           </div>

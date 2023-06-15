@@ -7,6 +7,7 @@ import CardData from "../CardData/CardData";
 import Footer from "../Footer/Footer";
 import api from "../../utils/pokeapi";
 import ItemModal from "../ItemModal/ItemModal";
+import { colors } from "../../utils/constants";
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]); // data
@@ -14,6 +15,21 @@ function App() {
   const [ifToggleResult, setIfToggleResult] = useState(false); // search result
   const [isLoading, setIsLoading] = useState(false); // preloader
   const [activeModal, setActiveModal] = useState("");
+
+  const [firstColor, setFirstColor] = useState(""); // Style poke-type from array property
+  const [secondColor, setSecondColor] = useState("");
+
+  useEffect(() => {
+    const firstType = pokemonData.types?.["0"]?.type.name;
+    setFirstColor(colors[firstType]);
+
+    const secondType = pokemonData.types?.["1"]?.type.name;
+    setSecondColor(colors[secondType]);
+  }, [pokemonData]);
+
+  function searchInput(e) {
+    setQuery(e.target.value.toLowerCase());
+  }
 
   // When image clicked...
   const handleClick = () => {
@@ -69,7 +85,7 @@ function App() {
         <Header></Header>
         <Main
           value={query}
-          setQuery={setQuery}
+          searchInput={searchInput}
           onSubmit={onSubmit}
           inputRef={inputRef}
           setIfToggleResult={setIfToggleResult}
@@ -80,6 +96,8 @@ function App() {
           isLoading={isLoading}
           pokemonData={pokemonData}
           handleClick={handleClick}
+          firstColor={firstColor}
+          secondColor={secondColor}
         />
       )}
       <About></About>
@@ -90,6 +108,8 @@ function App() {
           pokemonData={pokemonData}
           onClose={closeAllModals}
           onClick={handleOverlay}
+          firstColor={firstColor}
+          secondColor={secondColor}
         />
       )}
     </div>

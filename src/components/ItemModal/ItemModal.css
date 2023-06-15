@@ -30,7 +30,7 @@
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
-  line-height: 20px;
+  line-height: 30px;
 }
 .item-modal__close-button {
   background: transparent url(../../images/close-button.svg) center no-repeat;
@@ -51,11 +51,18 @@
   align-items: center;
   margin-top: 20px;
 }
+.item-modal__name {
+  text-transform: capitalize;
+}
 .item-modal__types {
   display: flex;
   margin-left: 15px;
 }
 .item-modal__type {
+  color: ghostwhite;
+  border-radius: 5px;
+  padding: 5px;
+  text-transform: capitalize;
 }
 .item__image-container {
   display: flex;
