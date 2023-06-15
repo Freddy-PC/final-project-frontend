@@ -21,7 +21,6 @@
   background-color: white;
   position: relative;
   border-radius: 16px;
-  height: 610px;
   width: 400px;
   cursor: default;
   text-align: center;
@@ -86,10 +85,20 @@
 }
 
 .item-modal__ability-second {
-  margin-left: 10px;
+  margin-left: 5px;
 }
 .item-modal__hidden-ability {
   display: none;
 }
 .item-modal__text {
+}
+.item-modal__chart-name {
+  display: flex;
+  text-transform: capitalize;
+  text-overflow: initial;
+  font-family: "Inter-Bold", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 10px;
 }

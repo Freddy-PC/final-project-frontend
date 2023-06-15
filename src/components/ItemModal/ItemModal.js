@@ -1,4 +1,14 @@
+import React, { useState, useEffect } from "react";
 import "./ItemModal.css";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  CartesianGrid,
+  ResponsiveContainer,
+} from "recharts";
 
 function ItemModal({ pokemonData, onClose, onClick, firstColor, secondColor }) {
   const hasSecondType = pokemonData.types?.["1"]?.type.name;
@@ -27,6 +37,33 @@ function ItemModal({ pokemonData, onClose, onClick, firstColor, secondColor }) {
   const totalHeight = meters * 39.57;
   const feet = Math.floor(meters * 3.28);
   const inches = Math.floor(totalHeight - feet * 12);
+
+  // Chart
+  const [hp, setHp] = useState("");
+  const [a, setA] = useState("");
+  const [sa, setSa] = useState("");
+  const [d, setD] = useState("");
+  const [sd, setSd] = useState("");
+  const [s, setS] = useState("");
+
+  // Name is set but value is conditional to api data
+  const data = [
+    { name: "hp", value: hp },
+    { name: "attack", value: a },
+    { name: "special-attack", value: sa },
+    { name: "defense", value: d },
+    { name: "special-defense", value: sd },
+    { name: "speed", value: s },
+  ];
+
+  useEffect(() => {
+    setHp((data["0"].value = pokemonData.stats?.["0"]?.base_stat));
+    setA((data["1"].value = pokemonData.stats?.["1"]?.base_stat));
+    setD((data["2"].value = pokemonData.stats?.["2"]?.base_stat));
+    setSa((data["3"].value = pokemonData.stats?.["3"]?.base_stat));
+    setSd((data["4"].value = pokemonData.stats?.["4"]?.base_stat));
+    setS((data["5"].value = pokemonData.stats?.["5"]?.base_stat));
+  }, [pokemonData]);
 
   return (
     <div className="item-modal" onClick={onClick}>
@@ -81,7 +118,7 @@ function ItemModal({ pokemonData, onClose, onClick, firstColor, secondColor }) {
         <div className="item-modal__info">
           <div className="item-modal__default-abilities">
             <p className="item-modal__ability">
-              Abilities: {pokemonData.abilities?.[0]?.ability?.name}
+              Abilities {"-->"} {pokemonData.abilities?.[0]?.ability?.name}
             </p>
             <p className={secondaryAbilityClassName}>
               {"  or "}
@@ -89,7 +126,7 @@ function ItemModal({ pokemonData, onClose, onClick, firstColor, secondColor }) {
             </p>
           </div>
           <p className={hiddenAbilityClassName}>
-            Hidden-Ability:{" "}
+            Hidden-Ability {"-->"}{" "}
             {pokemonData.abilities?.[2]?.ability?.name ||
               pokemonData.abilities?.[1]?.ability?.name}
           </p>
@@ -101,6 +138,19 @@ function ItemModal({ pokemonData, onClose, onClick, firstColor, secondColor }) {
               Height: {meters} meters or {feet}"{inches}'.
             </p>
           </div>
+        </div>
+        <div className="item-modal__chart">
+          <BarChart width={300} height={350} data={data}>
+            <XAxis
+              dataKey="name"
+              className="item-modal__chart-name"
+              stroke="#8884d8"
+            />
+            <YAxis />
+            <Tooltip />
+            <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+            <Bar dataKey="value" fill="#8884d8" barSize={20} />
+          </BarChart>
         </div>
       </div>
     </div>
