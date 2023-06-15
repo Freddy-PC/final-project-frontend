@@ -22,14 +22,18 @@
   position: relative;
   border-radius: 16px;
   width: 400px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   cursor: default;
   text-align: center;
-
   font-family: "Inter-Bold", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
-  line-height: 30px;
+  line-height: 20px;
 }
 .item-modal__close-button {
   background: transparent url(../../images/close-button.svg) center no-repeat;
@@ -46,16 +50,15 @@
 }
 .item-modal__header {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  margin-top: 20px;
 }
 .item-modal__name {
   text-transform: capitalize;
+  margin-bottom: 5px;
 }
 .item-modal__types {
   display: flex;
-  margin-left: 15px;
 }
 .item-modal__type {
   color: ghostwhite;
@@ -66,15 +69,20 @@
 .item__image-container {
   display: flex;
   justify-content: center;
-  margin: 15px;
+  align-items: center;
+  margin: 10px;
 }
 .item__image {
-  width: 100%;
-  height: 100%;
+  width: 50%;
+}
+.item__image-hidden {
+  display: none;
 }
 .item-modal__info {
-}
-.item-modal__description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
 }
 .item-modal__default-abilities {
   display: flex;
@@ -83,22 +91,44 @@
 .item-modal__type-display {
   margin-left: 10px;
 }
-
 .item-modal__ability-second {
   margin-left: 5px;
 }
 .item-modal__hidden-ability {
   display: none;
 }
-.item-modal__text {
+.item-modal__chart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .item-modal__chart-name {
-  display: flex;
   text-transform: capitalize;
-  text-overflow: initial;
   font-family: "Inter-Bold", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 10px;
   line-height: 10px;
+  width: 1px;
+}
+
+@media screen and (max-width: 480px) {
+  .item-modal__container {
+    display: block;
+    width: 280px;
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .item-modal__header {
+    margin-top: 20px;
+  }
+  .item-modal__close-button {
+    right: 0px;
+    top: -25px;
+  }
+  .item-modal__chart {
+    position: absolute;
+    bottom: 56px;
+    right: 4px;
+  }
 }

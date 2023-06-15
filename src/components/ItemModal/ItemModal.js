@@ -1,14 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./ItemModal.css";
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  Tooltip,
-  CartesianGrid,
-  ResponsiveContainer,
-} from "recharts";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
 
 function ItemModal({ pokemonData, onClose, onClick, firstColor, secondColor }) {
   const hasSecondType = pokemonData.types?.["1"]?.type.name;
@@ -22,12 +14,21 @@ function ItemModal({ pokemonData, onClose, onClick, firstColor, secondColor }) {
     secondAbility ? "item-modal__ability-second" : "item-modal__hidden-ability"
   } `;
 
-  // if 2nd or 3rd ability is hidden then display
+  // if 2nd or 3rd ability 'is-hidden' then display
   const hasHidden =
     pokemonData.abilities?.[2]?.is_hidden ||
     pokemonData.abilities?.[1]?.is_hidden === true;
   const hiddenAbilityClassName = `item-modal__ability ${
     hasHidden ? "item-modal__ability" : "item-modal__hidden-ability"
+  } `;
+
+  const secondShinyImage =
+    pokemonData.sprites?.versions["generation-v"]["black-white"].animated
+      .back_default ||
+    pokemonData.sprites?.back_default ||
+    pokemonData.sprites?.front_female;
+  const secondShinyImageClassName = `item__image ${
+    secondShinyImage ? "item__image" : "item__image-hidden"
   } `;
 
   const kilograms = pokemonData.weight / 10; // api in hectograms
@@ -50,9 +51,9 @@ function ItemModal({ pokemonData, onClose, onClick, firstColor, secondColor }) {
   const data = [
     { name: "hp", value: hp },
     { name: "attack", value: a },
-    { name: "special-attack", value: sa },
+    { name: "s-att", value: sa },
     { name: "defense", value: d },
-    { name: "special-defense", value: sd },
+    { name: "s-def", value: sd },
     { name: "speed", value: s },
   ];
 
@@ -99,7 +100,7 @@ function ItemModal({ pokemonData, onClose, onClick, firstColor, secondColor }) {
           <img
             src={
               pokemonData.sprites?.versions["generation-v"]["black-white"]
-                .animated.front_default || pokemonData.sprites?.front_default
+                .animated.front_shiny || pokemonData.sprites?.front_shiny
             }
             alt="pokepic-front"
             className="item__image"
@@ -107,12 +108,12 @@ function ItemModal({ pokemonData, onClose, onClick, firstColor, secondColor }) {
           <img
             src={
               pokemonData.sprites?.versions["generation-v"]["black-white"]
-                .animated.back_default ||
-              pokemonData.sprites?.back_default ||
+                .animated.back_shiny ||
+              pokemonData.sprites?.back_shiny ||
               pokemonData.sprites?.front_female
             }
             alt="pokepic-back"
-            className="item__image"
+            className={secondShinyImageClassName}
           />
         </div>
         <div className="item-modal__info">
@@ -132,24 +133,24 @@ function ItemModal({ pokemonData, onClose, onClick, firstColor, secondColor }) {
           </p>
           <div className="item-modal__description">
             <p className="item-modal__text">
-              Weight: {kilograms} kg or {pounds} ibs.
+              Weight: {kilograms} kg or {pounds} ibs
             </p>
             <p className="item-modal__text">
-              Height: {meters} meters or {feet}"{inches}'.
+              Height: {meters} meters or {feet}"{inches}'
             </p>
           </div>
         </div>
         <div className="item-modal__chart">
-          <BarChart width={300} height={350} data={data}>
+          <BarChart width={300} height={200} data={data}>
             <XAxis
               dataKey="name"
               className="item-modal__chart-name"
-              stroke="#8884d8"
+              stroke="#000"
             />
             <YAxis />
             <Tooltip />
-            <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-            <Bar dataKey="value" fill="#8884d8" barSize={20} />
+            <CartesianGrid strokeDasharray="" />
+            <Bar dataKey="value" fill="#2F71E5" barSize={22} />
           </BarChart>
         </div>
       </div>
