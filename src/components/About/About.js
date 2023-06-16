@@ -19,8 +19,8 @@ function About() {
           journey to become the greatest Pokemon Scholar of all time!
         </p>
         <p className="about__paragraph">
-          Practicum has taught me a variety of skills that made it possible for
-          me to make aesthetically pleasing and functional websites.
+          Practicum has taught me a variety of skills that make aesthetically
+          pleasing and functional websites possible.
         </p>
       </div>
     </section>

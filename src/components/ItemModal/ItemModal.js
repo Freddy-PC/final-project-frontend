@@ -141,6 +141,7 @@ function ItemModal({ pokemonData, onClose, onClick, firstColor, secondColor }) {
           </div>
         </div>
         <div className="item-modal__chart">
+          <p className="item-modal__chart-description">Base stats:</p>
           <BarChart width={300} height={200} data={data}>
             <XAxis
               dataKey="name"

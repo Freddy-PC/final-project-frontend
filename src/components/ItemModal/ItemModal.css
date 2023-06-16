@@ -21,8 +21,8 @@
   background-color: white;
   position: relative;
   border-radius: 16px;
-  width: 400px;
-  height: 600px;
+  min-width: 400px;
+  min-height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,7 +73,7 @@
   margin: 10px;
 }
 .item__image {
-  width: 50%;
+  width: 40%;
 }
 .item__image-hidden {
   display: none;
@@ -100,7 +100,7 @@
 .item-modal__chart {
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
 }
 .item-modal__chart-name {
   text-transform: capitalize;
@@ -114,8 +114,7 @@
 
 @media screen and (max-width: 480px) {
   .item-modal__container {
-    display: block;
-    width: 280px;
+    min-width: 280px;
     font-size: 15px;
     line-height: 22px;
   }
@@ -125,10 +124,5 @@
   .item-modal__close-button {
     right: 0px;
     top: -25px;
-  }
-  .item-modal__chart {
-    position: absolute;
-    bottom: 56px;
-    right: 4px;
   }
 }

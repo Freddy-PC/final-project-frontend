@@ -10,9 +10,6 @@ function Header() {
         <img src={logoImage} alt="Pokeball-Logo" className="header__logo" />
         <p className="header__logo-name">Poke-Inspector</p>
       </div>
-      <div className="nav__container">
-        <button>Home</button>
-      </div>
     </header>
   );
 }
