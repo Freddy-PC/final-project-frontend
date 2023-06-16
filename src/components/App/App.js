@@ -11,7 +11,7 @@ import { colors } from "../../utils/constants";
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]); // data
-  const [query, setQuery] = useState(""); // input
+  const [query, setQuery] = useState(null); // input
   const [ifToggleResult, setIfToggleResult] = useState(false); // search result
   const [isLoading, setIsLoading] = useState(false); // preloader
   const [activeModal, setActiveModal] = useState("");
@@ -21,7 +21,7 @@ function App() {
 
   useEffect(() => {
     const firstType = pokemonData.types?.["0"]?.type.name;
-    setFirstColor(colors[firstType]);
+    setFirstColor(colors[firstType]); // if type from api same as type "name" in array, apply color to style
 
     const secondType = pokemonData.types?.["1"]?.type.name;
     setSecondColor(colors[secondType]);
@@ -48,13 +48,14 @@ function App() {
       closeAllModals();
     }
   };
+  console.log(handleOverlay);
   useEffect(() => {
     const closebyEsc = (evt) => {
       if (evt.key === "Escape") {
         closeAllModals();
       }
     };
-    window.addEventListener("keypress", closebyEsc);
+    window.addEventListener("keydown", closebyEsc);
     return () => window.removeEventListener("keypress", closebyEsc);
   }, []);
 

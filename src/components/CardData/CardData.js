@@ -31,7 +31,7 @@ function CardData({
   // if there is no pokemonData then a message should appear
   // typings are styled if type from api is equal to the array type
   return (
-    <div className="cards" onClick={handleClick}>
+    <div className="cards">
       {isLoading ? (
         <>
           <div className="preloader"></div>
@@ -49,7 +49,7 @@ function CardData({
           ) : (
             <>
               <h1 className="results__header">Search Results</h1>
-              <div className="card__container">
+              <div className="card__container" onClick={handleClick}>
                 <h1 className="card__name">
                   {pokemonData.name}: {pokemonData.id}
                 </h1>
