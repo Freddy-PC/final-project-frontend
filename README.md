@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# Final-Project: Poke-Inspector
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+- Project Purpose
+- Visit the application
+- Tech & Techniques
 
-In the project directory, you can run:
+**Project Purpose**
 
-### `npm start`
+Pokemon is a franchise that depicts fictional creatures that a trainer can catch & train.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Playing Pokemon games is a lot of fun and as a competitive person I always wanted to create the strongest team.
+But to be the best 'that no one ever was' you need extensive knowledge on Pokemon.
+The deciding factor between winning or losing against another trainer could be knowing the Pokemons Type, Ability, Stats, etc.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The Poke-Inspector app displays information about any known Pokemon. All you need to do is type a Pokemon's name or ID number, from the National Dex, and click the 'Search' button! The name, type, and image will display upon a successful search. If the Pokemon name is typed incorrectly it will not display.
 
-### `npm test`
+If a user clicks the 'Card' displayed from the search you will see more data: the Pokemon's Ability, Hidden-Ability, Weight, Height, and stats.
+Any trainer can view the application as it dynamically adapts to different screen sizes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Visit the app**
 
-### `npm run build`
+Click HERE[] to see the app in action!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Tech & Techniques**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- JavaScript + React.js
+- Flat BEM structure
+- Flexbox
+- API (Application Programming Interface)
+- Promises
+- JSON format
+- Fetch Method (Server Requests)
