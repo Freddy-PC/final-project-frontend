@@ -10,7 +10,7 @@
   border-bottom-color: #888;
   border-radius: 50%;
   animation: spin 0.75s infinite linear;
-  margin-bottom: 20px;
+  margin-bottom: 21px;
 }
 .preloader__text {
   font-family: "Inter-Regular", Arial, sans-serif;
