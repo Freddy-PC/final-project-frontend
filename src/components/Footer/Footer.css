@@ -18,3 +18,9 @@
     padding-bottom: 36px;
   }
 }
+
+@media screen and (max-width: 360px) {
+  .footer__text {
+    font-size: 11px;
+  }
+}

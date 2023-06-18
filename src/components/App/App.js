@@ -83,7 +83,7 @@ function App() {
   return (
     <div className="app">
       <div className="app__background">
-        <Header></Header>
+        <Header />
         <Main
           value={query}
           searchInput={searchInput}

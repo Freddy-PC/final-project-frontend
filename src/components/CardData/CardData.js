@@ -31,7 +31,7 @@ function CardData({
   // if there is no pokemonData then a message should appear
   // typings are styled if type from api is equal to the array type
   return (
-    <div className="cards">
+    <section className="cards">
       {isLoading ? (
         <>
           <div className="preloader"></div>
@@ -91,7 +91,7 @@ function CardData({
           )}
         </>
       )}
-    </div>
+    </section>
   );
 }
 

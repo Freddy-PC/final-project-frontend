@@ -5,7 +5,7 @@ import AboutPic from "../../images/about-picture.jpg";
 
 function About() {
   return (
-    <section className="about page__section">
+    <section className="about app__section">
       <img src={AboutPic} alt="about-pic" className="about__image" />
       <div className="about__content">
         <h2 className="about__title">About the Author</h2>

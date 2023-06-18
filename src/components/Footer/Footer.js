@@ -5,7 +5,7 @@ function Footer() {
   const today = new Date();
 
   return (
-    <footer className="footer page__section">
+    <footer className="footer app__section">
       <p className="footer__text">Developed by Freddy Perez-Camacho</p>
       <p className="footer__text">{today.getFullYear()}</p>
     </footer>
