@@ -7,7 +7,7 @@ import CardData from "../CardData/CardData";
 import Footer from "../Footer/Footer";
 import api from "../../utils/pokeapi";
 import ItemModal from "../ItemModal/ItemModal";
-import { colors } from "../../utils/constants";
+import { COLOR__TYPE, MODAL_TYPE } from "../../utils/constants";
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]); // data
@@ -21,25 +21,20 @@ function App() {
 
   useEffect(() => {
     const firstType = pokemonData.types?.["0"]?.type.name;
-    setFirstColor(colors[firstType]); // if type from api same as type "name" in array, apply color to style
+    setFirstColor(COLOR__TYPE[firstType]); // if type from api same as type "name" in array, apply color to style
 
     const secondType = pokemonData.types?.["1"]?.type.name;
-    setSecondColor(colors[secondType]);
+    setSecondColor(COLOR__TYPE[secondType]);
   }, [pokemonData]);
 
   function searchInput(e) {
     setQuery(e.target.value.toLowerCase());
   }
 
-  // When image clicked...
   const handleClick = () => {
     setActiveModal(MODAL_TYPE.PREVIEW);
   };
 
-  // Use 'enum' style to add values
-  const MODAL_TYPE = {
-    PREVIEW: "preview", // Clothing images
-  };
   const closeAllModals = () => {
     setActiveModal("");
   };
@@ -48,7 +43,6 @@ function App() {
       closeAllModals();
     }
   };
-  console.log(handleOverlay);
   useEffect(() => {
     const closebyEsc = (evt) => {
       if (evt.key === "Escape") {
@@ -60,8 +54,7 @@ function App() {
   }, []);
 
   const inputRef = useRef();
-  // Get pokemon from api via input
-  // Loading state is true during api call & false after api call is complete
+
   function onSubmit(e) {
     e.preventDefault();
     setIsLoading(true);

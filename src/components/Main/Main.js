@@ -2,9 +2,9 @@ import React from "react";
 import "./Main.css";
 import "../App/App.css";
 
-// SetQuery is assigned the value of input field
-// setIfToggleResult is false at start so result doesn't show in other component
-// lowerCase() method converts uppercase values to lowercase so names are not case-sensitive
+/* SetQuery is assigned the value of input field
+   setIfToggleResult is false at start so result doesn't show in other component 
+   lowerCase() method converts uppercase values to lowercase so names are not case-sensitive */
 function Main({ query, searchInput, onSubmit, inputRef, setIfToggleResult }) {
   return (
     <main className="main app__section">
@@ -25,8 +25,8 @@ function Main({ query, searchInput, onSubmit, inputRef, setIfToggleResult }) {
             onChange={searchInput}
             ref={inputRef}
             required
-            minlength="1"
-            maxlength="20"
+            minLength="1"
+            maxLength="20"
           ></input>
           <button
             className="search__button"

@@ -1,4 +1,4 @@
-const colors = {
+const COLOR__TYPE = {
   grass: "green",
   fire: "orangered",
   water: "deepskyblue",
@@ -23,4 +23,8 @@ const colors = {
   steel: "#B8B8D0",
   fairy: "lightpink",
 };
-export { colors };
+// Use 'enum' style to add values
+const MODAL_TYPE = {
+  PREVIEW: "preview", // Clothing images
+};
+export { COLOR__TYPE, MODAL_TYPE };

@@ -27,9 +27,9 @@ function CardData({
     secondImage ? "card__pokepic" : "card__pokepic-hidden"
   } `;
 
-  // if it's loading the preloader will appear
-  // if there is no pokemonData then a message should appear
-  // typings are styled if type from api is equal to the array type
+  /* if it's loading the preloader will appear
+     if there is no pokemonData then a message should appear
+     typings are styled if type from api is equal to the array type */
   return (
     <section className="cards">
       {isLoading ? (

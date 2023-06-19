@@ -47,23 +47,25 @@ function ItemModal({ pokemonData, onClose, onClick, firstColor, secondColor }) {
   const [sd, setSd] = useState("");
   const [s, setS] = useState("");
 
-  // Name is set but value is conditional to api data
+  /* Name is set but value is conditional to api data
+    Array of data stores name & value properties for graph
+     Value is not a hard-coded value  b/c of useState */
   const data = [
     { name: "hp", value: hp },
     { name: "attack", value: a },
-    { name: "s-att", value: sa },
     { name: "defense", value: d },
+    { name: "s-att", value: sa },
     { name: "s-def", value: sd },
     { name: "speed", value: s },
   ];
 
   useEffect(() => {
-    setHp((data["0"].value = pokemonData.stats?.["0"]?.base_stat));
-    setA((data["1"].value = pokemonData.stats?.["1"]?.base_stat));
-    setD((data["2"].value = pokemonData.stats?.["2"]?.base_stat));
-    setSa((data["3"].value = pokemonData.stats?.["3"]?.base_stat));
-    setSd((data["4"].value = pokemonData.stats?.["4"]?.base_stat));
-    setS((data["5"].value = pokemonData.stats?.["5"]?.base_stat));
+    setHp(pokemonData.stats?.["0"]?.base_stat);
+    setA(pokemonData.stats?.["1"]?.base_stat);
+    setD(pokemonData.stats?.["2"]?.base_stat);
+    setSa(pokemonData.stats?.["3"]?.base_stat);
+    setSd(pokemonData.stats?.["4"]?.base_stat);
+    setS(pokemonData.stats?.["5"]?.base_stat);
   }, [pokemonData]);
 
   return (
@@ -142,7 +144,15 @@ function ItemModal({ pokemonData, onClose, onClick, firstColor, secondColor }) {
         </div>
         <div className="item-modal__chart">
           <p className="item-modal__chart-description">Base stats:</p>
-          <BarChart width={300} height={200} data={data}>
+          <BarChart
+            width={300}
+            height={200}
+            margin={{
+              left: -10,
+              right: 20,
+            }}
+            data={data}
+          >
             <XAxis
               dataKey="name"
               className="item-modal__chart-name"
@@ -150,7 +160,7 @@ function ItemModal({ pokemonData, onClose, onClick, firstColor, secondColor }) {
             />
             <YAxis />
             <Tooltip />
-            <CartesianGrid strokeDasharray="" />
+            <CartesianGrid strokeDasharray="4 2 4" />
             <Bar dataKey="value" fill="#2F71E5" barSize={22} />
           </BarChart>
         </div>
