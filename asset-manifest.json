@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/final-project-frontend/static/css/main.31bc33a6.css",
-    "main.js": "/final-project-frontend/static/js/main.5325c75f.js",
+    "main.css": "/final-project-frontend/static/css/main.29dbb485.css",
+    "main.js": "/final-project-frontend/static/js/main.359723c1.js",
     "static/js/787.28cb0dcd.chunk.js": "/final-project-frontend/static/js/787.28cb0dcd.chunk.js",
     "static/media/about-picture.jpg": "/final-project-frontend/static/media/about-picture.9b835928a0c4a8a9120f.jpg",
     "static/media/pokemon-background.jpg": "/final-project-frontend/static/media/pokemon-background.aa209df59c608a26db64.jpg",
     "static/media/Inter-SemiBold.ttf": "/final-project-frontend/static/media/Inter-SemiBold.4d56bb21f2399db8ad48.ttf",
     "static/media/Inter-Regular.ttf": "/final-project-frontend/static/media/Inter-Regular.e89cb19905e7db5591b0.ttf",
-    "static/media/pokeball-logo.png": "/final-project-frontend/static/media/pokeball-logo.cb601693a15a86e876b4.png",
+    "static/media/pokeball-logo.svg": "/final-project-frontend/static/media/pokeball-logo.971ff0df3575a7bdfe049607724e9575.svg",
     "index.html": "/final-project-frontend/index.html",
-    "static/media/close-button.svg": "/final-project-frontend/static/media/close-button.8d741e5e7568531050f2.svg",
-    "main.31bc33a6.css.map": "/final-project-frontend/static/css/main.31bc33a6.css.map",
-    "main.5325c75f.js.map": "/final-project-frontend/static/js/main.5325c75f.js.map",
+    "static/media/close-button.svg": "/final-project-frontend/static/media/close-button.3bb0f9c12bc72f1f7b55.svg",
+    "main.29dbb485.css.map": "/final-project-frontend/static/css/main.29dbb485.css.map",
+    "main.359723c1.js.map": "/final-project-frontend/static/js/main.359723c1.js.map",
     "787.28cb0dcd.chunk.js.map": "/final-project-frontend/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.31bc33a6.css",
-    "static/js/main.5325c75f.js"
+    "static/css/main.29dbb485.css",
+    "static/js/main.359723c1.js"
   ]
 }
