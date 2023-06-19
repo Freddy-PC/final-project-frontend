@@ -22,3 +22,17 @@
     width: calc(100% - 40px);
   }
 }
+
+::-webkit-scrollbar {
+  width: 1.2em;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(0, 0%, 100%);
+  border: 0.2em solid hsl(0, 0%, 0%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(17, 88%, 44%);
+  border: 0.2em solid hsl(0, 0%, 0%);
+}

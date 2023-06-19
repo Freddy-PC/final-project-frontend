@@ -18,14 +18,14 @@
   cursor: pointer;
 }
 .item-modal__container {
-  background-color: white;
   position: relative;
+  background-color: white;
   border-radius: 16px;
   min-width: 400px;
-  min-height: 600px;
+  height: 75vh;
+  overflow: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 
   cursor: default;
   text-align: center;
@@ -41,8 +41,8 @@
   width: 20px;
   height: 20px;
   position: absolute;
-  right: -25px;
-  top: -15px;
+  right: 15px;
+  top: 15px;
 }
 .item-modal__close-button:hover {
   cursor: pointer;
@@ -55,7 +55,7 @@
 }
 .item-modal__name {
   text-transform: capitalize;
-  margin-bottom: 5px;
+  margin: 15px 0 15px 0;
 }
 .item-modal__types {
   display: flex;
@@ -102,6 +102,9 @@
   align-items: center;
   flex-direction: column;
 }
+.item-modal__chart-description {
+  margin: 15px 0 15px 0;
+}
 .item-modal__chart-name {
   text-transform: capitalize;
   font-family: "Inter-Bold", Arial, sans-serif;
@@ -120,9 +123,5 @@
   }
   .item-modal__header {
     margin-top: 20px;
-  }
-  .item-modal__close-button {
-    right: 0px;
-    top: -25px;
   }
 }
