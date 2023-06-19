@@ -21,7 +21,9 @@ Any trainer can view the application as it dynamically adapts to different scree
 
 **Visit the app**
 
-Click HERE[] to see the app in action!
+[Click HERE](https://freddy-pc.github.io/final-project-frontend/) to see the app in action!
+
+Link name: https://freddy-pc.github.io/final-project-frontend/
 
 **Tech & Techniques**
 
