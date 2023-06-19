@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../../fonts/Inter-Regular.ttf");
+}
+
+.app {
+  font-family: "Inter", "Arial", sans-serif;
+}
+.app__background {
+  background: url("../../images/pokemon-background.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.app__section {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .app__section {
+    width: calc(100% - 40px);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 1.2em;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(0, 0%, 100%);
+  border: 0.2em solid hsl(0, 0%, 0%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(17, 88%, 44%);
+  border: 0.2em solid hsl(0, 0%, 0%);
+}

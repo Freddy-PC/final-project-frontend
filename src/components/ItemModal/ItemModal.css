@@ -1,0 +1,127 @@
+@font-face {
+  font-family: "Inter-Bold";
+  src: url("../../fonts/Inter-SemiBold.ttf");
+}
+
+/* font-family: "Cabinet Grotesk", "Arial", sans-serif; */
+.item-modal {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.item-modal__container {
+  position: relative;
+  background-color: white;
+  border-radius: 16px;
+  min-width: 400px;
+  height: 75vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+
+  cursor: default;
+  text-align: center;
+  font-family: "Inter-Bold", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+}
+.item-modal__close-button {
+  background: transparent url(../../images/close-button.svg) center no-repeat;
+  border: none;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+.item-modal__close-button:hover {
+  cursor: pointer;
+  opacity: 80%;
+}
+.item-modal__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.item-modal__name {
+  text-transform: capitalize;
+  margin: 15px 0 15px 0;
+}
+.item-modal__types {
+  display: flex;
+}
+.item-modal__type {
+  color: ghostwhite;
+  border-radius: 5px;
+  padding: 5px;
+  text-transform: capitalize;
+}
+.item__image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+.item__image {
+  width: 40%;
+}
+.item__image-hidden {
+  display: none;
+}
+.item-modal__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.item-modal__default-abilities {
+  display: flex;
+  justify-content: center;
+}
+.item-modal__type-display {
+  margin-left: 10px;
+}
+.item-modal__ability-second {
+  margin-left: 5px;
+}
+.item-modal__hidden-ability {
+  display: none;
+}
+.item-modal__chart {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.item-modal__chart-description {
+  margin: 15px 0 15px 0;
+}
+.item-modal__chart-name {
+  text-transform: capitalize;
+  font-family: "Inter-Bold", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 10px;
+  width: 1px;
+}
+
+@media screen and (max-width: 480px) {
+  .item-modal__container {
+    min-width: 280px;
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .item-modal__header {
+    margin-top: 20px;
+  }
+}
