@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/final-project-frontend/static/css/main.29dbb485.css",
-    "main.js": "/final-project-frontend/static/js/main.359723c1.js",
-    "static/js/787.28cb0dcd.chunk.js": "/final-project-frontend/static/js/787.28cb0dcd.chunk.js",
+    "main.css": "/final-project-frontend/static/css/main.baf84d0e.css",
+    "main.js": "/final-project-frontend/static/js/main.81e80088.js",
+    "static/js/787.d4aba7ab.chunk.js": "/final-project-frontend/static/js/787.d4aba7ab.chunk.js",
     "static/media/about-picture.jpg": "/final-project-frontend/static/media/about-picture.9b835928a0c4a8a9120f.jpg",
     "static/media/pokemon-background.jpg": "/final-project-frontend/static/media/pokemon-background.aa209df59c608a26db64.jpg",
     "static/media/Inter-SemiBold.ttf": "/final-project-frontend/static/media/Inter-SemiBold.4d56bb21f2399db8ad48.ttf",
@@ -10,12 +10,12 @@
     "static/media/pokeball-logo.svg": "/final-project-frontend/static/media/pokeball-logo.971ff0df3575a7bdfe049607724e9575.svg",
     "index.html": "/final-project-frontend/index.html",
     "static/media/close-button.svg": "/final-project-frontend/static/media/close-button.3bb0f9c12bc72f1f7b55.svg",
-    "main.29dbb485.css.map": "/final-project-frontend/static/css/main.29dbb485.css.map",
-    "main.359723c1.js.map": "/final-project-frontend/static/js/main.359723c1.js.map",
-    "787.28cb0dcd.chunk.js.map": "/final-project-frontend/static/js/787.28cb0dcd.chunk.js.map"
+    "main.baf84d0e.css.map": "/final-project-frontend/static/css/main.baf84d0e.css.map",
+    "main.81e80088.js.map": "/final-project-frontend/static/js/main.81e80088.js.map",
+    "787.d4aba7ab.chunk.js.map": "/final-project-frontend/static/js/787.d4aba7ab.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.29dbb485.css",
-    "static/js/main.359723c1.js"
+    "static/css/main.baf84d0e.css",
+    "static/js/main.81e80088.js"
   ]
 }
