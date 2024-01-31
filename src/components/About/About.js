@@ -10,17 +10,20 @@ function About() {
       <div className="about__content">
         <h2 className="about__title">About the Author</h2>
         <p className="about__paragraph">
-          Hello, my name is Freddy. I'm a Software Engineer that knows how to
-          use HTML, CSS, JavaScript, & React.
+          Hello, my name is Freddy. I’m an experienced Software Engineer who
+          uses HTML, CSS, JavaScript, and React to create webpages.
         </p>
         <p className="about__paragraph">
-          Coding is another form of art. It's cheesy to say but this site was
-          once an idea. Now the fully functional website can aid you on your
-          journey to become the greatest Pokemon Scholar of all time!
+          Poke-Inspector's mission is to aid Pokemon trainers on their quest to
+          become the greatest Pokemon Scholar of all time! With over 1000+
+          Pokemon, there is so much you need to know “to become the very best
+          like no one ever was”.
         </p>
         <p className="about__paragraph">
-          Practicum has taught me a variety of skills that make aesthetically
-          pleasing and functional websites possible.
+          Formerly known as Practicum, TripleTen taught me skills to create both
+          aesthetically pleasing and functional websites. I can't wait to create
+          even more web pages, it feels like embarking on new adventures in
+          unexplored regions of the Pokemon world!
         </p>
       </div>
     </section>
