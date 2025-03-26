@@ -5,11 +5,7 @@
 
 .app {
   font-family: "Inter", "Arial", sans-serif;
-}
-.app__background {
-  background: url("../../images/pokemon-background.jpg") no-repeat;
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(0deg, #d0d0d0, #c70003);
 }
 .app__section {
   max-width: 900px;

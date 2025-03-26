@@ -21,6 +21,8 @@
   margin: 0;
   margin: 0px 0px 20px;
   color: ghostwhite;
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 1px;
 }
 .main__paragraph {
   font-style: normal;

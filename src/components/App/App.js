@@ -75,16 +75,15 @@ function App() {
 
   return (
     <div className="app">
-      <div className="app__background">
-        <Header />
-        <Main
-          value={query}
-          searchInput={searchInput}
-          onSubmit={onSubmit}
-          inputRef={inputRef}
-          setIfToggleResult={setIfToggleResult}
-        />
-      </div>
+      <Header />
+      <Main
+        value={query}
+        searchInput={searchInput}
+        onSubmit={onSubmit}
+        inputRef={inputRef}
+        setIfToggleResult={setIfToggleResult}
+      />
+
       {ifToggleResult && (
         <CardData
           isLoading={isLoading}
