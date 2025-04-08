@@ -22,17 +22,28 @@
   display: flex;
   flex-direction: column;
 }
+/* Text*/
 .about__row:nth-child(odd) .about__row-content {
   text-align: right;
 }
 .about__row:nth-child(even) .about__row-content {
   text-align: left;
 }
+/* Placement */
 .about__row:nth-child(even) {
   flex-direction: row-reverse;
   margin-top: 50px;
 }
-/* Image difference between child number */
+.about__row:nth-child(odd) {
+  margin-top: 50px;
+}
+.about__row:first-of-type {
+  margin: 0;
+}
+.about__row:nth-last-of-type(1) {
+  margin-top: 50px;
+}
+/* Image margin -- difference between child */
 .about__row:nth-child(odd) .about__image {
   margin-right: 30px;
 }
@@ -53,6 +64,10 @@
   font-weight: normal;
   font-size: 20px;
   line-height: 30px;
+}
+/* Spacing*/
+.about__paragraph:nth-of-type(even) {
+  margin-top: 20px;
 }
 
 @media screen and (max-width: 640px) {
