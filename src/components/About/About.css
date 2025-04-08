@@ -13,25 +13,31 @@
   width: 280px;
   height: 280px;
   border-radius: 20%;
-  margin-right: 30px;
 }
 
-.about__row-first {
+.about__row {
   display: flex;
-}
-.about__row-second {
-  display: flex;
-  flex-direction: row-reverse;
 }
 .about__row-content {
   display: flex;
   flex-direction: column;
 }
-.about__row-first .about__row-content {
+.about__row:nth-child(odd) .about__row-content {
   text-align: right;
 }
-.about__row-second .about__row-content {
+.about__row:nth-child(even) .about__row-content {
   text-align: left;
+}
+.about__row:nth-child(even) {
+  flex-direction: row-reverse;
+  margin-top: 50px;
+}
+/* Image difference between child number */
+.about__row:nth-child(odd) .about__image {
+  margin-right: 30px;
+}
+.about__row:nth-child(even) .about__image {
+  margin-left: 30px;
 }
 .about__title {
   font-family: "Inter-Bold", Arial, sans-serif;

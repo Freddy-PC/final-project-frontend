@@ -14,7 +14,7 @@ function About() {
           4. Format CSS to Figma
           */}
       <div className="about__content">
-        <div className="about__row-first">
+        <div className="about__row">
           <img src={examplePicture} alt="about-pic" className="about__image" />
           <div className="about__row-content">
             <h2 className="about__title">About the Author</h2>
@@ -28,7 +28,7 @@ function About() {
             </p>
           </div>
         </div>
-        <div className="about__row-second">
+        <div className="about__row">
           <img src={examplePicture} alt="about-pic" className="about__image" />
           <div className="about__row-content">
             <h2 className="about__title">Mission</h2>
