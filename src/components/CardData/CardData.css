@@ -23,6 +23,7 @@
   align-items: center;
   flex-direction: column;
   cursor: grab;
+  background: no-repeat url("../../images/pokeball-background.svg") left 50%;
 }
 .card__name {
   font-family: "Inter-Bold", Arial, sans-serif;
