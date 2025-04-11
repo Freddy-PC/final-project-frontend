@@ -22,8 +22,6 @@
   background-color: white;
   border-radius: 16px;
   min-width: 400px;
-  height: 75vh;
-  overflow: auto;
   display: flex;
   flex-direction: column;
 
