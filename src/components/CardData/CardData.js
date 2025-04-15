@@ -14,7 +14,7 @@ function CardData({
   // Conditionally renders class if second-type is present
   const hasSecondType = pokemonData.types?.["1"]?.type.name;
   const cardTypeClassName = `card__type ${
-    hasSecondType ? "card__type-display" : "card__type"
+    hasSecondType ? "card__type-display" : "card__type_undefined"
   } `;
 
   // If no second image, don't display
@@ -26,7 +26,6 @@ function CardData({
   const secondImageClassName = `card__pokepic ${
     secondImage ? "card__pokepic" : "card__pokepic-hidden"
   } `;
-
   /* if it's loading the preloader will appear
      if there is no pokemonData then a message should appear
      typings are styled if type from api is equal to the array type */
@@ -67,25 +66,29 @@ function CardData({
                     {pokemonData.types?.["1"]?.type.name}
                   </h2>
                 </div>
-                <img
-                  src={
-                    pokemonData.sprites?.versions["generation-v"]["black-white"]
-                      .animated.front_default ||
-                    pokemonData.sprites?.front_default
-                  }
-                  alt="pokepic-front"
-                  className="card__pokepic"
-                />
-                <img
-                  src={
-                    pokemonData.sprites?.versions["generation-v"]["black-white"]
-                      .animated.back_default ||
-                    pokemonData.sprites?.back_default ||
-                    pokemonData.sprites?.front_female
-                  }
-                  alt="pokepic-back"
-                  className={secondImageClassName}
-                />
+                <div className="card__images">
+                  <img
+                    src={
+                      pokemonData.sprites?.versions["generation-v"][
+                        "black-white"
+                      ].animated.front_default ||
+                      pokemonData.sprites?.front_default
+                    }
+                    alt="pokepic-front"
+                    className="card__pokepic"
+                  />
+                  <img
+                    src={
+                      pokemonData.sprites?.versions["generation-v"][
+                        "black-white"
+                      ].animated.back_default ||
+                      pokemonData.sprites?.back_default ||
+                      pokemonData.sprites?.front_female
+                    }
+                    alt="pokepic-back"
+                    className={secondImageClassName}
+                  />
+                </div>
               </div>
             </>
           )}
