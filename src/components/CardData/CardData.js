@@ -26,6 +26,17 @@ function CardData({
   const secondImageClassName = `card__pokepic ${
     secondImage ? "card__pokepic" : "card__pokepic-hidden"
   } `;
+  const primaryTyping = pokemonData.types?.["0"].type.name;
+  const secondaryTyping = pokemonData.types?.["1"]?.type.name;
+  const frontSprite =
+    pokemonData.sprites?.versions["generation-v"]["black-white"].animated
+      .front_default || pokemonData.sprites?.front_default;
+  const backSprite =
+    pokemonData.sprites?.versions["generation-v"]["black-white"].animated
+      .back_default ||
+    pokemonData.sprites?.back_default ||
+    pokemonData.sprites?.front_female;
+
   /* if it's loading the preloader will appear
      if there is no pokemonData then a message should appear
      typings are styled if type from api is equal to the array type */
@@ -57,34 +68,23 @@ function CardData({
                     className="card__type"
                     style={{ backgroundColor: firstColor }}
                   >
-                    {pokemonData.types?.["0"].type.name}
+                    {primaryTyping}
                   </h2>
                   <h2
                     className={cardTypeClassName}
                     style={{ backgroundColor: secondColor }}
                   >
-                    {pokemonData.types?.["1"]?.type.name}
+                    {secondaryTyping}
                   </h2>
                 </div>
                 <div className="card__images">
                   <img
-                    src={
-                      pokemonData.sprites?.versions["generation-v"][
-                        "black-white"
-                      ].animated.front_default ||
-                      pokemonData.sprites?.front_default
-                    }
+                    src={frontSprite}
                     alt="pokepic-front"
                     className="card__pokepic"
                   />
                   <img
-                    src={
-                      pokemonData.sprites?.versions["generation-v"][
-                        "black-white"
-                      ].animated.back_default ||
-                      pokemonData.sprites?.back_default ||
-                      pokemonData.sprites?.front_female
-                    }
+                    src={backSprite}
                     alt="pokepic-back"
                     className={secondImageClassName}
                   />
