@@ -9,6 +9,7 @@
   align-items: center;
   padding: 80px 0 80px;
   background-color: #f5f6f5;
+  background: linear-gradient(90deg, #cf9f9c, #a6342f);
 }
 .results__header {
   margin: 0 0 30px 0;
@@ -23,7 +24,8 @@
   align-items: center;
   flex-direction: column;
   cursor: grab;
-  background: no-repeat url("../../images/pokeball-background.svg") left 50%;
+  background: white no-repeat url("../../images/pokeball-background.svg") left
+    50%;
   background-size: contain;
 }
 .card__name {
@@ -32,14 +34,13 @@
   font-weight: 500;
   font-size: 30px;
   line-height: 50px;
-  margin: 10px 0 10px 0;
+  margin: 50px 0 25px 0;
   text-transform: capitalize;
 }
 
 .card__type-container {
   display: flex;
   flex-direction: row;
-  margin-bottom: 10px;
 }
 .card__type {
   font-family: "Inter-Bold", Arial, sans-serif;
@@ -47,22 +48,31 @@
   font-weight: 500;
   font-size: 25px;
   line-height: 30px;
+  padding: 10px;
+
   color: ghostwhite;
-  border-radius: 5px;
-  padding: 5px;
   text-transform: capitalize;
+  border-radius: 5px;
+  outline: auto;
+  outline-color: black;
 }
 .card__type-display {
-  margin-left: 10px;
+  margin-left: 15px;
   font-family: "Inter-Bold", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 25px;
   line-height: 30px;
 }
+.card__type_undefined {
+  padding: 0px;
+}
+.card__images {
+  display: flex;
+}
 .card__pokepic {
-  width: 150px;
-  margin-bottom: 25px;
+  width: 200px;
+  margin: 25px 0 75px 0;
 }
 .card__pokepic-hidden {
   display: none;
@@ -70,8 +80,9 @@
 
 @media screen and (max-width: 480px) {
   .card__name {
-    font-size: 22px;
     line-height: 30px;
+    font-size: 25px;
+    text-align: center;
   }
   .card__type {
     font-size: 20px;
@@ -79,5 +90,9 @@
   }
   .card__container {
     width: 250px;
+  }
+  .card__pokepic {
+    width: 125px;
+    margin: 25px 0 75px 0;
   }
 }
