@@ -6,7 +6,7 @@
 .header {
   margin-top: 30px;
   border-bottom: 1px solid;
-  border-bottom-color: ghostwhite;
+  border-bottom-color: black;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,7 +28,11 @@
   font-weight: 500;
   font-size: 25px;
   line-height: 40px;
+  color: black;
+}
+.header__logo-name:hover {
   color: ghostwhite;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 480px) {
