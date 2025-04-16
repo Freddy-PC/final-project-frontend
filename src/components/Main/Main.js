@@ -1,6 +1,8 @@
 import React from "react";
 import "./Main.css";
 import "../App/App.css";
+import searchIcon from "../../images/search-icon.svg";
+import diceIcon from "../../images/dice-icon.svg";
 
 /* SetQuery is assigned the value of input field
    setIfToggleResult is false at start so result doesn't show in other component 
@@ -31,11 +33,20 @@ function Main({ query, searchInput, onSubmit, inputRef, setIfToggleResult }) {
           <button
             className="search__button"
             type="search"
-            onClick={setIfToggleResult}
+            onClick={() => setIfToggleResult(true)}
           >
+            <img className="search__icon" src={searchIcon} alt="search-icon" />
             Search
           </button>
         </form>
+        {/* <button
+          className="random__button"
+          type="random"
+          // onClick={setIfToggleResult}
+        >
+          <img className="random__icon" src={diceIcon} alt="random-icon" />
+          Random
+        </button> */}
       </div>
     </main>
   );

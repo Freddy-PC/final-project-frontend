@@ -69,7 +69,10 @@
   transition: 0.7s;
   opacity: 90%;
 }
-
+.search__icon {
+  width: 20px;
+  padding-right: 10px;
+}
 @media screen and (max-width: 640px) {
   .search__input {
     width: 280px;
