@@ -18,5 +18,16 @@ const getPokemon = async (value) => {
   // .catch() handled in app.js
 };
 
-const api = { getPokemon };
+const getRandomPokemon = async () => {
+  const triviaPokemonId = Math.floor(Math.random() * 1025) + 1;
+  const res = await fetch(`${baseUrl}/${triviaPokemonId}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  return processServerResponse(res);
+};
+
+const api = { getPokemon, getRandomPokemon };
 export default api;
