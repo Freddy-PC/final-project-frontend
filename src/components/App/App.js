@@ -58,6 +58,7 @@ function App() {
   function onSubmit(e) {
     e.preventDefault();
     setIsLoading(true);
+    setIfToggleResult(true);
 
     api
       .getPokemon(query)
@@ -68,9 +69,25 @@ function App() {
       .catch((err) => console.log(err))
       .finally(() => {
         setIsLoading(false);
+        inputRef.current.value = "";
       });
     setPokemonData(""); // Reset data for next search
-    inputRef.current.value = "";
+  }
+  function randomSubmit(e) {
+    e.preventDefault();
+    setIsLoading(true);
+    setIfToggleResult(true);
+
+    api
+      .getRandomPokemon()
+      .then((pokearray) => {
+        setPokemonData(pokearray);
+      })
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setIsLoading(false);
+        inputRef.current.value = "";
+      });
   }
 
   return (
@@ -80,8 +97,8 @@ function App() {
         value={query}
         searchInput={searchInput}
         onSubmit={onSubmit}
+        randomSubmit={randomSubmit}
         inputRef={inputRef}
-        setIfToggleResult={setIfToggleResult}
       />
 
       {ifToggleResult && (
