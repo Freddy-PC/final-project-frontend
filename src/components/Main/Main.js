@@ -16,7 +16,7 @@ function Main({ query, searchInput, onSubmit, inputRef, randomSubmit }) {
         <div className="search__container">
           <form className="search" onSubmit={onSubmit} noValidate>
             <input
-              className="search__input"
+              className="search__bar"
               name="search"
               type="search"
               id="search"
@@ -28,29 +28,29 @@ function Main({ query, searchInput, onSubmit, inputRef, randomSubmit }) {
               minLength="1"
               maxLength="20"
             ></input>
-            <button className="button button__search" type="search">
-              <img className="icon" src={searchIcon} alt="search-icon" />
-              Search
-            </button>
-            <button
-              className="button button__random"
-              type="button"
-              onClick={(e) => {
-                randomSubmit(e);
-              }}
-            >
-              <img className="icon" src={diceIcon} alt="random-icon" />
-              Random
-            </button>
-          </form>
-        </div>
-        {/*  */}
-        <div className="container">
-          <form className="srch__container">
-            <input type="text" className="search-bar" placeholder="Search..." />
-            <div className="button-group">
-              <button className="btn">Btn 1</button>
-              <button className="btn">Btn 2</button>
+            <div className="search__buttons">
+              <button className="button button__search" type="search">
+                <img
+                  className="button__icon"
+                  src={searchIcon}
+                  alt="search-icon"
+                />
+                Search
+              </button>
+              <button
+                className="button button__random"
+                type="button"
+                onClick={(e) => {
+                  randomSubmit(e);
+                }}
+              >
+                <img
+                  className="button__icon"
+                  src={diceIcon}
+                  alt="random-icon"
+                />
+                Random
+              </button>
             </div>
           </form>
         </div>
