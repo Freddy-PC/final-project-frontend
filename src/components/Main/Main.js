@@ -4,9 +4,6 @@ import "../App/App.css";
 import searchIcon from "../../images/search-icon.svg";
 import diceIcon from "../../images/dice-icon.svg";
 
-/* SetQuery is assigned the value of input field
-   setIfToggleResult is false at start so result doesn't show in other component 
-   lowerCase() method converts uppercase values to lowercase so names are not case-sensitive */
 function Main({ query, searchInput, onSubmit, inputRef, randomSubmit }) {
   return (
     <main className="main app__section">
@@ -46,6 +43,14 @@ function Main({ query, searchInput, onSubmit, inputRef, randomSubmit }) {
             <img className="icon" src={diceIcon} alt="random-icon" />
             Random
           </button>
+        </div>
+        {/*  */}
+        <div class="container">
+          <input type="text" class="search-bar" placeholder="Search..." />
+          <div class="button-group">
+            <button className="btn">Btn 1</button>
+            <button className="btn">Btn 2</button>
+          </div>
         </div>
       </div>
     </main>
