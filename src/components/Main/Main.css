@@ -31,8 +31,11 @@
   color: black;
   text-align: center;
 }
-.search {
+.search__container {
   position: relative;
+}
+
+.search {
 }
 .search__input {
   width: 610px;
@@ -50,9 +53,8 @@
 .search__input:hover {
   border: 2px solid #ffffff;
 }
-.search__button {
+.button {
   color: white;
-  background-color: #2f71e5;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -64,12 +66,18 @@
   border-radius: 50px;
   border: 2px solid #000000;
 }
-.search__button:hover {
+.button:hover {
   cursor: pointer;
   transition: 0.7s;
   opacity: 90%;
 }
-.search__icon {
+.button__search {
+  background-color: #2f71e5;
+}
+.button__random {
+  background-color: #dd4c34;
+}
+.icon {
   width: 20px;
   padding-right: 10px;
 }
