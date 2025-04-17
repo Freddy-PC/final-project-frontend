@@ -3,18 +3,6 @@
 *::after {
   box-sizing: border-box;
 }
-/*  */
-.container {
-}
-.srch__container {
-}
-
-.search-bar {
-}
-.button-group {
-}
-.btn {
-}
 @font-face {
   font-family: "Inter-Bold";
   src: url("../../fonts/Inter-SemiBold.ttf");
@@ -50,10 +38,7 @@
   color: black;
   text-align: center;
 }
-/*                           */
 .search__container {
-  position: relative;
-
   max-width: 600px;
   width: 100%;
 }
