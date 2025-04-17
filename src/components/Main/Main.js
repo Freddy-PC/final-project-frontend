@@ -32,25 +32,27 @@ function Main({ query, searchInput, onSubmit, inputRef, randomSubmit }) {
               <img className="icon" src={searchIcon} alt="search-icon" />
               Search
             </button>
+            <button
+              className="button button__random"
+              type="button"
+              onClick={(e) => {
+                randomSubmit(e);
+              }}
+            >
+              <img className="icon" src={diceIcon} alt="random-icon" />
+              Random
+            </button>
           </form>
-          <button
-            className="button button__random"
-            type="button"
-            onClick={(e) => {
-              randomSubmit(e);
-            }}
-          >
-            <img className="icon" src={diceIcon} alt="random-icon" />
-            Random
-          </button>
         </div>
         {/*  */}
-        <div class="container">
-          <input type="text" class="search-bar" placeholder="Search..." />
-          <div class="button-group">
-            <button className="btn">Btn 1</button>
-            <button className="btn">Btn 2</button>
-          </div>
+        <div className="container">
+          <form className="srch__container">
+            <input type="text" className="search-bar" placeholder="Search..." />
+            <div className="button-group">
+              <button className="btn">Btn 1</button>
+              <button className="btn">Btn 2</button>
+            </div>
+          </form>
         </div>
       </div>
     </main>
