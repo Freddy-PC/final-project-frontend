@@ -116,7 +116,7 @@
   background-color: #dd4c34;
 }
 .button__icon {
-  width: clamp(12px, 6vw, 24px);
+  width: clamp(30px, 6vw, 40px);
   padding-right: 10px;
   height: auto;
 }

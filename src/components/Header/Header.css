@@ -17,28 +17,27 @@
   display: flex;
   align-items: center;
 }
-.header__logo {
+.header__image {
   width: 40px;
   height: 40px;
 }
+/* .header__image_icon {
+}
+.header__image_question {
+} */
 .header__logo-name {
   margin: 0 0 0 5px;
   font-family: "Inter-Bold", "Arial", sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 25px;
-  line-height: 40px;
-  color: black;
+  font-size: clamp(20px, 4vw, 25px);
+  line-height: clamp(20px, 6vw, 40px);
+  color: ghostwhite;
+  transition: 0.2s ease-in-out;
 }
 .header__logo-name:hover {
-  color: ghostwhite;
+  color: black;
   cursor: pointer;
 }
-
-@media screen and (max-width: 480px) {
-  .header__logo-name {
-    font-style: normal;
-    font-size: 20px;
-    line-height: 20px;
-  }
-}
+/* .header__nav {
+} */
