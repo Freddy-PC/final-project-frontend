@@ -29,7 +29,10 @@ function Main({ query, searchInput, onSubmit, inputRef, randomSubmit }) {
               maxLength="20"
             ></input>
             <div className="search__buttons">
-              <button className="button button__search" type="search">
+              <button
+                className="button button__search button__shadow-drop button__shadow-drop_black"
+                type="search"
+              >
                 <img
                   className="button__icon"
                   src={searchIcon}
@@ -38,7 +41,7 @@ function Main({ query, searchInput, onSubmit, inputRef, randomSubmit }) {
                 Search
               </button>
               <button
-                className="button button__random"
+                className="button button__random button__shadow-drop button__shadow-drop_black"
                 type="button"
                 onClick={(e) => {
                   randomSubmit(e);

@@ -85,14 +85,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.button:hover {
   cursor: pointer;
-  transition: 0.7s;
-  opacity: 75%;
+}
+.button__shadow-drop {
+  position: relative;
+  background: rgb(0, 0, 0);
+  transition: 0.1s ease-in-out;
+  left: 0px;
+  top: 0px;
+}
+/* Hover effect for desktop */
+.button__shadow-drop:hover {
+  cursor: pointer;
+  box-shadow: rgb(0, 0, 0) 4px 4px 0px 0px;
+}
+
+/* Pressed effect for all devices (including mobile) */
+.button__shadow-drop:active {
+  left: 4px;
+  top: 4px;
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+}
+.button__shadow-drop_black {
+  box-shadow: rgb(0, 0, 0) 4px 4px 0px 0px;
 }
 .button__search {
-  background-color: #2f71e5;
+  background-color: rgb(47, 113, 229);
 }
 .button__random {
   background-color: #dd4c34;
