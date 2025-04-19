@@ -18,9 +18,24 @@
   align-items: center;
 }
 /* .header__image-icon {
-}
-.header__image-question {
 } */
+/* Unique color */
+.header__image-question path {
+  fill: black;
+  cursor: pointer;
+  transition: fill 0.4s ease-in-out;
+}
+.header__image-question:hover path {
+  fill: white;
+}
+.header__image-question rect {
+  fill: white;
+  cursor: pointer;
+  transition: fill 0.4s ease-in-out;
+}
+.header__image-question:hover rect {
+  fill: black;
+}
 .header__logo-name {
   margin: 0 0 0 5px;
   font-family: "Inter-Bold", "Arial", sans-serif;
