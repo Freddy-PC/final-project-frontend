@@ -13,7 +13,14 @@ function About() {
           3. Update About.css to have section css
           4. Format CSS to Figma
           */}
-      <div className="about__content">
+      <div className="flex-container">
+        <h1 className="title">About the Author</h1>
+        <p className="paragraph">
+          Like a Pokémon, every developer has a story. Click here to learn more!
+          ✨
+        </p>
+      </div>
+      {/* <div className="about__content">
         <div className="about__row">
           <img src={examplePicture} alt="about-pic" className="about__image" />
           <div className="about__row-content">
@@ -60,7 +67,7 @@ function About() {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

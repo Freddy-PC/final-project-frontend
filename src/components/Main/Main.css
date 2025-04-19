@@ -11,38 +11,11 @@
 .main {
   padding: 80px 0 80px 0;
 }
-.main__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.main__title {
-  font-family: "Inter-Bold", Arial, sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  text-align: center;
-  font-size: clamp(26px, 8vw, 40px);
-  line-height: clamp(32px, 10vw, 50px);
-  margin: 0;
-  margin: 0px 0px 20px;
-  color: black;
-}
-.main__paragraph {
-  max-width: 800px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: clamp(16px, 4.5vw, 20px);
-  line-height: clamp(24px, 6.5vw, 30px);
-  margin: 0px 0px 20px;
-  color: black;
-  text-align: center;
-}
+
 .search__container {
   max-width: 600px;
   width: 100%;
 }
-
 .search {
   display: flex;
   flex-wrap: wrap;
