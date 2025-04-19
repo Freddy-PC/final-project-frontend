@@ -11,7 +11,7 @@ function Header() {
         <img
           src={logoImage}
           alt="Pokeball-Logo"
-          className="header__image header__image_icon"
+          className="image header__image-icon"
         />
         <p className="header__logo-name">Poke-Inspector</p>
       </div>
@@ -19,7 +19,7 @@ function Header() {
         <img
           src={questionLogo}
           alt="Pokeball-Logo"
-          className="header__image header__image_question"
+          className="image header__image-question"
         />
       </div>
     </header>

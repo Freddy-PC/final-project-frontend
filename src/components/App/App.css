@@ -39,6 +39,9 @@
   color: black;
   text-align: center;
 }
+.image {
+  width: clamp(40px, 6vw, 50px);
+}
 @media screen and (max-width: 1200px) {
   .app__section {
     width: calc(100% - 40px);
