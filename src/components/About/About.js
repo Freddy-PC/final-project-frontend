@@ -16,8 +16,10 @@ function About() {
       <div className="flex-container">
         <h1 className="title">About the Author</h1>
         <p className="paragraph">
-          Like a Pokémon, every developer has a story. Click here to learn more!
-          ✨
+          Like a Pokémon, every developer has a story.{" "}
+          <button className="button button__render button__shadow-drop button__shadow-drop_black">
+            Click here to learn more!✨
+          </button>
         </p>
       </div>
       {/* <div className="about__content">
