@@ -13,6 +13,7 @@ function App() {
   const [pokemonData, setPokemonData] = useState([]); // data
   const [query, setQuery] = useState(null); // input
   const [ifToggleResult, setIfToggleResult] = useState(false); // search result
+  const [toggleComponent, setToggleComponent] = useState(false);
   const [isLoading, setIsLoading] = useState(false); // preloader
   const [activeModal, setActiveModal] = useState("");
 
@@ -110,7 +111,10 @@ function App() {
           secondColor={secondColor}
         />
       )}
-      <About></About>
+      <About
+        setToggleComponent={setToggleComponent}
+        toggleComponent={toggleComponent}
+      ></About>
       <Footer></Footer>
 
       {activeModal === MODAL_TYPE.PREVIEW && (

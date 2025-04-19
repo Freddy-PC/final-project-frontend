@@ -4,7 +4,7 @@ import "../App/App.css";
 import examplePicture from "../../images/pokemon-background.jpg";
 import Section from "../Section/Section";
 
-function About() {
+function About({ toggleComponent, setToggleComponent }) {
   return (
     <section className="about app__section">
       {/* Section Component here for resuability */}
@@ -17,11 +17,17 @@ function About() {
         <h1 className="title">About the Author</h1>
         <p className="paragraph">
           Like a Pokémon, every developer has a story.{" "}
-          <button className="button button__render button__shadow-drop button__shadow-drop_black">
+          <button
+            className="button button__render button__shadow-drop button__shadow-drop_black"
+            onClick={() => {
+              setToggleComponent(true);
+            }}
+          >
             Click here to learn more!✨
           </button>
         </p>
       </div>
+      {toggleComponent == true ? <p>Hey it worked!</p> : <p>This failed!</p>}
       {/* <div className="about__content">
         <div className="about__row">
           <img src={examplePicture} alt="about-pic" className="about__image" />
