@@ -2,14 +2,14 @@ import React from "react";
 import "./About.css";
 import "../App/App.css";
 import examplePicture from "../../images/pokemon-background.jpg";
-import Section from "../Section/Section";
+import AboutRow from "../AboutRow/AboutRow";
 
 function About({ toggleComponent, setToggleComponent }) {
   return (
     <section className="about app__section">
       {toggleComponent === true ? (
         <>
-          <Section
+          <AboutRow
             index={0}
             title={"About the Author"}
             text__first={
@@ -20,7 +20,7 @@ function About({ toggleComponent, setToggleComponent }) {
             }
             imgSrc={examplePicture}
           />
-          <Section
+          <AboutRow
             index={1}
             title={"Mission"}
             text__first={
@@ -31,7 +31,7 @@ function About({ toggleComponent, setToggleComponent }) {
             }
             imgSrc={examplePicture}
           />
-          <Section
+          <AboutRow
             index={2}
             title={"Acknowledgments"}
             text__first={

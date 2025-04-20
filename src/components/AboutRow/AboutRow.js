@@ -1,9 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../About/About.css";
 
-// RENAME to AboutRow
-// Won't be resued anywhere else for now but this is good practice and very reusable and organized
-function Section({ index, title, text__first, text__second, imgSrc }) {
+function AboutRow({ index, title, text__first, text__second, imgSrc }) {
   const ref = useRef(null);
   const [rowVisible, setRowVisible] = useState(false);
 
@@ -48,4 +46,4 @@ function Section({ index, title, text__first, text__second, imgSrc }) {
     </div>
   );
 }
-export default Section;
+export default AboutRow;
