@@ -17,6 +17,7 @@
 .about__row {
   display: flex;
 }
+
 .about__row-content {
   display: flex;
   flex-direction: column;
