@@ -111,6 +111,7 @@ function App() {
           secondColor={secondColor}
         />
       )}
+      {/* <Trivia/> */}
       <About
         setToggleComponent={setToggleComponent}
         toggleComponent={toggleComponent}

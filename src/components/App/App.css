@@ -137,7 +137,7 @@
 }
 @media screen and (max-width: 1200px) {
   .app__section {
-    width: calc(100% - 40px);
+    width: calc(100% - 50px);
   }
 }
 
