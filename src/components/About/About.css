@@ -17,20 +17,26 @@
 .about__row {
   display: flex;
 }
-
+.about__row.about__row-normal {
+  flex-direction: row;
+  text-align: left;
+}
+.about__row.about__row-reverse {
+  flex-direction: row-reverse;
+  text-align: right;
+}
 .about__row-content {
   display: flex;
   flex-direction: column;
 }
-/* Text*/
 .about__row:nth-child(odd) .about__row-content {
   text-align: right;
 }
 .about__row:nth-child(even) .about__row-content {
   text-align: left;
 }
-/* Placement */
-.about__row:nth-child(even) {
+
+/* .about__row:nth-child(even) {
   flex-direction: row-reverse;
   margin-top: 50px;
 }
@@ -41,8 +47,8 @@
   margin: 0;
 }
 .about__row:nth-last-of-type(1) {
-  margin: 50px 0 50px 0;
-}
+  margin: 50px 0 50px 0; 
+}*/
 /* Image margin -- difference between child */
 .about__row:nth-child(odd) .about__image {
   margin-right: 30px;
