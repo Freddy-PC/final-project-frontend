@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import "../About/About.css";
+import "../AboutRow/AboutRow.css";
+import "../App/App.css";
 
 function AboutRow({ index, title, text__first, text__second, imgSrc }) {
   const ref = useRef(null);
@@ -20,26 +21,19 @@ function AboutRow({ index, title, text__first, text__second, imgSrc }) {
     if (ref.current) observer.observe(ref.current);
   }, []);
 
-  const rowClass = `about__row ${
-    index % 2 === 0 ? "about__row-normal" : "about__row-reverse"
+  const rowClass = `about-row ${
+    index % 2 === 0 ? "about-row--normal" : "about-row--reverse"
   }
   ${rowVisible ? `animation__fade-in` : `animation__hidden`}`;
-  // DYNAMIC CLASS for image if odd or even
-  // IF image even, no margin is added, if odd add margin left to image
-  // const rowImageClass = = `about__row ${
-  //   index % 2 === 0 ? "about__image-normal" : "about__image-reverse"}`;
-  // }
-
-  // REFACTOR ABOUT.CSS class to "AboutRow.css"
   return (
-    <div className="about__section">
-      <div className="about__content">
+    <div className="about-row__section">
+      <div className="about-row__content">
         <div ref={ref} className={rowClass}>
-          <img src={imgSrc} alt="about-pic" className="about__image" />
-          <div className="about__row-content">
-            <h2 className="about__title">{title}</h2>
-            <p className="about__paragraph">{text__first}</p>
-            <p className="about__paragraph">{text__second}</p>
+          <img src={imgSrc} alt="about-pic" className="about-row__image" />
+          <div className="about-row__content">
+            <h2 className="about-row__title">{title}</h2>
+            <p className="about-row__paragraph">{text__first}</p>
+            <p className="about-row__paragraph">{text__second}</p>
           </div>
         </div>
       </div>
