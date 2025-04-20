@@ -8,6 +8,7 @@ import Footer from "../Footer/Footer";
 import api from "../../utils/pokeapi";
 import ItemModal from "../ItemModal/ItemModal";
 import { COLOR__TYPE, MODAL_TYPE } from "../../utils/constants";
+import Trivia from "../Trivia/Trivia";
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]); // data
@@ -111,7 +112,7 @@ function App() {
           secondColor={secondColor}
         />
       )}
-      {/* <Trivia/> */}
+      <Trivia />
       <About
         setToggleComponent={setToggleComponent}
         toggleComponent={toggleComponent}
