@@ -26,15 +26,26 @@
   transition: fill 0.4s ease-in-out;
 }
 .header__image-question:hover path {
-  fill: white;
-}
-.header__image-question rect {
-  fill: white;
   cursor: pointer;
-  transition: fill 0.4s ease-in-out;
+  fill: white;
+  stroke: white;
 }
-.header__image-question:hover rect {
+.header__image-question:hover ellipse {
+  cursor: pointer;
   fill: black;
+}
+.header__image-menu {
+  transition: stroke 0.8s ease-in-out;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.header__image-menu:hover rect {
+  cursor: pointer;
+  stroke: grey;
+}
+.image__inner-color:hover path {
+  cursor: pointer;
+  fill: red;
 }
 .header__logo-name {
   margin: 0 0 0 5px;
@@ -50,5 +61,5 @@
   color: black;
   cursor: pointer;
 }
-/* .header__nav {
-} */
+.header__nav {
+}
