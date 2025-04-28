@@ -1,6 +1,11 @@
-.trivia__container {
-  width: 100%;
+.trivia {
 }
 .trivia__card {
   background-color: grey;
+}
+.trivia__header {
+}
+.trivia__info {
+}
+.trivia__footer {
 }
