@@ -54,7 +54,7 @@ export const getValidSprite = async (id) => {
       return fallback;
     }
   } catch (err) {
-    return fallback;
+    return err;
   }
 };
 
