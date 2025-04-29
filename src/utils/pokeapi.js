@@ -1,5 +1,9 @@
 const baseUrl = "https://pokeapi.co/api/v2/pokemon";
 const pokedexUrl = "https://pokeapi.co/api/v2/pokemon-species";
+export const getAnimatedSpriteUrl = (pokemonId) =>
+  `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${pokemonId}.gif`;
+export const getFallbackSpriteUrl = (pokemonId) =>
+  `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`;
 
 const processServerResponse = (res) => {
   if (res.ok) {
@@ -38,16 +42,26 @@ const getPokedexEntry = async (triviaPokemonId) => {
   });
   return processServerResponse(res);
 };
-// In Trivia.js
-const getPokemonSprite = async (triviaPokemonId) => {
-  const res = await fetch(`${pokedexUrl}/${triviaPokemonId}`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  return processServerResponse(res);
+export const getValidSprite = async (id) => {
+  const animated = getAnimatedSpriteUrl(id);
+  const fallback = getFallbackSpriteUrl(id);
+
+  try {
+    const res = await fetch(animated, { method: "HEAD" });
+    if (res.ok) {
+      return animated;
+    } else {
+      return fallback;
+    }
+  } catch (err) {
+    return fallback;
+  }
 };
 
-const api = { getPokemon, getRandomPokemon, getPokedexEntry, getPokemonSprite };
+const api = {
+  getPokemon,
+  getRandomPokemon,
+  getPokedexEntry,
+  getValidSprite,
+};
 export default api;
