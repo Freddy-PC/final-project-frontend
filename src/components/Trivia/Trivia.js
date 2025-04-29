@@ -1,22 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "../App/App.css";
 import "../Trivia/Trivia.css";
 import api, { getValidSprite } from "../../utils/pokeapi";
 
 function Trivia() {
-  // Make global constant to sue also in CardData.js? (Same needed there)
-  // const frontSprite =
-  //   pokemonData.sprites?.versions["generation-v"]["black-white"].animated
-  //     .front_default || pokemonData.sprites?.front_default;
   const [triviaData, setTriviaData] = useState({});
   const [pokemonSprite, setPokemonSprite] = useState({});
   const [pokemonId, setPokemonId] = useState(null);
-  useEffect(() => {
-    // initial request
-    const randomPokemonId = Math.floor(Math.random() * 1025) + 1;
+  const randomPokemonIdRef = useRef(Math.floor(Math.random() * 1025) + 1);
 
-    getValidSprite(randomPokemonId).then(setPokemonSprite); // api
-    setPokemonId(randomPokemonId);
+  useEffect(() => {
+    // initial request + only run once
+    const id = randomPokemonIdRef.current;
+    setPokemonId(id);
+
+    getValidSprite(id).then(setPokemonSprite);
     //   .getPokedexEntry(randomPokemonId)
     //   .then((pokearray) => {
     //     setTriviaData(pokearray);
@@ -25,8 +23,6 @@ function Trivia() {
     //   .finally(() => {});
   }, []);
   // console.log(triviaData);
-  console.log(pokemonSprite);
-  console.log(pokemonId);
 
   return (
     <section className="trivia app__section">
