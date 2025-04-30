@@ -19,7 +19,7 @@
   background-color: white;
   border: 1px solid black;
   border-radius: 10px;
-  width: 400px;
+  max-width: 600px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -32,8 +32,8 @@
   font-family: "Inter-Bold", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 30px;
-  line-height: 50px;
+  font-size: clamp(25px, 6vw, 35px);
+  line-height: clamp(30px, 6vw, 50px);
   margin: 50px 0 25px 0;
   text-transform: capitalize;
 }
@@ -42,57 +42,6 @@
   display: flex;
   flex-direction: row;
 }
-.card__type {
-  font-family: "Inter-Bold", Arial, sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 25px;
-  line-height: 30px;
-  padding: 10px;
-
-  color: ghostwhite;
-  text-transform: capitalize;
-  border-radius: 5px;
-  outline: auto;
-  outline-color: black;
-}
-.card__type-display {
-  margin-left: 15px;
-  font-family: "Inter-Bold", Arial, sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 25px;
-  line-height: 30px;
-}
-.card__type_undefined {
-  padding: 0px;
-}
 .card__images {
   display: flex;
-}
-.card__pokepic {
-  width: 200px;
-  margin: 25px 0 75px 0;
-}
-.card__pokepic-hidden {
-  display: none;
-}
-
-@media screen and (max-width: 480px) {
-  .card__name {
-    line-height: 30px;
-    font-size: 25px;
-    text-align: center;
-  }
-  .card__type {
-    font-size: 20px;
-    line-height: 30px;
-  }
-  .card__container {
-    width: 250px;
-  }
-  .card__pokepic {
-    width: 125px;
-    margin: 25px 0 75px 0;
-  }
 }

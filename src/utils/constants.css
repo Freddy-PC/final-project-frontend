@@ -1,0 +1,34 @@
+/* Pokemon Typing Box */
+.type {
+  font-family: "Inter-Bold", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: clamp(20px, 4vw, 25px);
+  line-height: clamp(30px, 6vw, 40px);
+  padding: 10px;
+
+  color: ghostwhite;
+  text-transform: capitalize;
+  border-radius: 5px;
+  outline: auto;
+  outline-color: black;
+}
+.type__display {
+  margin-left: 15px;
+  font-family: "Inter-Bold", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 30px;
+}
+.type__undefined {
+  padding: 0px;
+}
+/* Pokemon Sprites */
+.sprite {
+  width: clamp(125px, 18vw, 200px);
+  margin: 25px 0 75px 0;
+}
+.sprite__undefined {
+  display: none;
+}

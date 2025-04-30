@@ -5,8 +5,9 @@ import {
   getTyping,
   cardTypeClassName,
   secondImageClassName,
+  getBasicInfo,
 } from "../../utils/constants.js";
-// import "../../utils/constants.css"
+import "../../utils/constants.css";
 
 function CardData({
   pokemonData,
@@ -15,15 +16,14 @@ function CardData({
   firstColor,
   secondColor,
 }) {
+  const { name, id } = getBasicInfo(pokemonData);
   //Typing + color style
   const { primaryTyping, secondaryTyping } = getTyping(pokemonData);
   const secondaryTypeClassName = cardTypeClassName(secondColor);
-
   /* Sprites 
    animated pics for Gen 1-5 (1-649) + normal pics for Gen 6-9 */
   const { frontSprite, backSprite } = getSprites(pokemonData);
   const backSpriteClassName = secondImageClassName(backSprite);
-
   // Preloader while data is being retrieved
   // Message if no data is retrieved
   return (
@@ -47,13 +47,10 @@ function CardData({
               <h1 className="results__header">Search Results</h1>
               <div className="card__container" onClick={handleClick}>
                 <h1 className="card__name">
-                  {pokemonData.name}: {pokemonData.id}
+                  {name}: {id}
                 </h1>
                 <div className="card__type-container">
-                  <h2
-                    className="card__type"
-                    style={{ backgroundColor: firstColor }}
-                  >
+                  <h2 className="type" style={{ backgroundColor: firstColor }}>
                     {primaryTyping}
                   </h2>
                   <h2
@@ -67,7 +64,7 @@ function CardData({
                   <img
                     src={frontSprite}
                     alt="pokepic-front"
-                    className="card__pokepic"
+                    className="sprite"
                   />
                   <img
                     src={backSprite}

@@ -27,7 +27,11 @@ const COLOR__TYPE = {
 const MODAL_TYPE = {
   PREVIEW: "preview", // Clothing images
 };
-
+// Name, ID, Weight, Height, etc.
+const getBasicInfo = (pokemonData) => ({
+  name: pokemonData?.name || "Unknown",
+  id: pokemonData.id || "N/A",
+});
 // Typing
 const getTyping = (pokemonData) => {
   if (!pokemonData?.types)
@@ -39,9 +43,7 @@ const getTyping = (pokemonData) => {
   return { primaryTyping, secondaryTyping };
 };
 const cardTypeClassName = (secondaryTyping) =>
-  `card__type ${
-    secondaryTyping ? "card__type-display" : "card__type_undefined"
-  } `;
+  `type ${secondaryTyping ? "type__display" : "type__undefined"} `;
 //Sprites - Animated vs Stale
 const getSprites = (pokemonData) => {
   const frontSprite =
@@ -55,11 +57,12 @@ const getSprites = (pokemonData) => {
   return { frontSprite, backSprite };
 };
 const secondImageClassName = (backSprite) =>
-  `card__pokepic ${backSprite ? "card__pokepic" : "card__pokepic-hidden"} `;
+  `sprite ${backSprite ? "sprite" : "sprite__undefined"} `;
 
 export {
   COLOR__TYPE,
   MODAL_TYPE,
+  getBasicInfo,
   getTyping,
   cardTypeClassName,
   getSprites,
