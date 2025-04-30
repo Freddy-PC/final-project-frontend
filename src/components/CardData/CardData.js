@@ -1,5 +1,12 @@
 import "./CardData.css";
 import "../Preloader/Preloader.css";
+import {
+  getSprites,
+  getTyping,
+  cardTypeClassName,
+  secondImageClassName,
+} from "../../utils/constants.js";
+// import "../../utils/constants.css"
 
 function CardData({
   pokemonData,
@@ -8,38 +15,17 @@ function CardData({
   firstColor,
   secondColor,
 }) {
-  // animated pics for Gen 1-5 (1-649)
-  // normal pics for Gen 6-9
+  //Typing + color style
+  const { primaryTyping, secondaryTyping } = getTyping(pokemonData);
+  const secondaryTypeClassName = cardTypeClassName(secondColor);
 
-  // Conditionally renders class if second-type is present
-  const hasSecondType = pokemonData.types?.["1"]?.type.name;
-  const cardTypeClassName = `card__type ${
-    hasSecondType ? "card__type-display" : "card__type_undefined"
-  } `;
+  /* Sprites 
+   animated pics for Gen 1-5 (1-649) + normal pics for Gen 6-9 */
+  const { frontSprite, backSprite } = getSprites(pokemonData);
+  const backSpriteClassName = secondImageClassName(backSprite);
 
-  // If no second image, don't display
-  const secondImage =
-    pokemonData.sprites?.versions["generation-v"]["black-white"].animated
-      .back_default ||
-    pokemonData.sprites?.back_default ||
-    pokemonData.sprites?.front_female;
-  const secondImageClassName = `card__pokepic ${
-    secondImage ? "card__pokepic" : "card__pokepic-hidden"
-  } `;
-  const primaryTyping = pokemonData.types?.["0"].type.name;
-  const secondaryTyping = pokemonData.types?.["1"]?.type.name;
-  const frontSprite =
-    pokemonData.sprites?.versions["generation-v"]["black-white"].animated
-      .front_default || pokemonData.sprites?.front_default;
-  const backSprite =
-    pokemonData.sprites?.versions["generation-v"]["black-white"].animated
-      .back_default ||
-    pokemonData.sprites?.back_default ||
-    pokemonData.sprites?.front_female;
-
-  /* if it's loading the preloader will appear
-     if there is no pokemonData then a message should appear
-     typings are styled if type from api is equal to the array type */
+  // Preloader while data is being retrieved
+  // Message if no data is retrieved
   return (
     <section className="cards">
       {isLoading ? (
@@ -71,7 +57,7 @@ function CardData({
                     {primaryTyping}
                   </h2>
                   <h2
-                    className={cardTypeClassName}
+                    className={secondaryTypeClassName}
                     style={{ backgroundColor: secondColor }}
                   >
                     {secondaryTyping}
@@ -86,7 +72,7 @@ function CardData({
                   <img
                     src={backSprite}
                     alt="pokepic-back"
-                    className={secondImageClassName}
+                    className={backSpriteClassName}
                   />
                 </div>
               </div>

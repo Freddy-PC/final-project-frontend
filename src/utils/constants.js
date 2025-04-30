@@ -27,4 +27,41 @@ const COLOR__TYPE = {
 const MODAL_TYPE = {
   PREVIEW: "preview", // Clothing images
 };
-export { COLOR__TYPE, MODAL_TYPE };
+
+// Typing
+const getTyping = (pokemonData) => {
+  if (!pokemonData?.types)
+    return { primaryTyping: null, secondaryTyping: null };
+
+  const primaryTyping = pokemonData.types[0]?.type?.name || null;
+  const secondaryTyping = pokemonData.types[1]?.type?.name || null;
+
+  return { primaryTyping, secondaryTyping };
+};
+const cardTypeClassName = (secondaryTyping) =>
+  `card__type ${
+    secondaryTyping ? "card__type-display" : "card__type_undefined"
+  } `;
+//Sprites - Animated vs Stale
+const getSprites = (pokemonData) => {
+  const frontSprite =
+    pokemonData.sprites?.versions["generation-v"]["black-white"].animated
+      .front_default || pokemonData.sprites?.front_default;
+  const backSprite =
+    pokemonData.sprites?.versions["generation-v"]["black-white"].animated
+      .back_default ||
+    pokemonData.sprites?.back_default ||
+    pokemonData.sprites?.front_female;
+  return { frontSprite, backSprite };
+};
+const secondImageClassName = (backSprite) =>
+  `card__pokepic ${backSprite ? "card__pokepic" : "card__pokepic-hidden"} `;
+
+export {
+  COLOR__TYPE,
+  MODAL_TYPE,
+  getTyping,
+  cardTypeClassName,
+  getSprites,
+  secondImageClassName,
+};
