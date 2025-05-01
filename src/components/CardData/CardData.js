@@ -1,11 +1,11 @@
 import "./CardData.css";
 import "../Preloader/Preloader.css";
 import {
-  getSprites,
+  getBasicInfo,
   getTyping,
   cardTypeClassName,
+  getSprites,
   secondImageClassName,
-  getBasicInfo,
 } from "../../utils/constants.js";
 import "../../utils/constants.css";
 
@@ -63,12 +63,12 @@ function CardData({
                 <div className="card__images">
                   <img
                     src={frontSprite}
-                    alt="pokepic-front"
+                    alt={`${name}front-sprite`}
                     className="sprite"
                   />
                   <img
                     src={backSprite}
-                    alt="pokepic-back"
+                    alt={`${name}back-sprite`}
                     className={backSpriteClassName}
                   />
                 </div>
