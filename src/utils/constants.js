@@ -27,11 +27,29 @@ const COLOR__TYPE = {
 const MODAL_TYPE = {
   PREVIEW: "preview", // Clothing images
 };
-// Name, ID, Weight, Height, etc.
-const getBasicInfo = (pokemonData) => ({
-  name: pokemonData?.name || "Unknown",
-  id: pokemonData.id || "N/A",
-});
+// Name, ID, Weight, Height, etc. + fallback missing data
+const getBasicInfo = (pokemonData) => {
+  const name = pokemonData?.name || "Unknown";
+  const id = pokemonData?.id || "N/A";
+
+  const kilograms = pokemonData?.weight ? pokemonData.weight / 10 : null;
+  const pounds = kilograms ? (kilograms * 2.205).toFixed(1) : "N/A";
+
+  const meters = pokemonData?.height ? pokemonData.height / 10 : null;
+  const feet = meters ? Math.floor(meters * 3.28) : "N/A";
+  const inches =
+    meters && feet !== "N/A" ? Math.floor(meters * 39.57 - feet * 12) : "N/A";
+
+  return {
+    name,
+    id,
+    kilograms: kilograms ?? "N/A",
+    pounds,
+    meters: meters ?? "N/A",
+    feet,
+    inches,
+  };
+};
 // Typing
 const getTyping = (pokemonData) => {
   if (!pokemonData?.types)
