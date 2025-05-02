@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./ItemModal.css";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
 import "../../utils/constants.css";
-// Need to add helper functions and clean up
+//////////////// Need to add helper functions and clean up
 
 function ItemModal({ pokemonData, onClose, onClick, firstColor, secondColor }) {
   const hasSecondType = pokemonData.types?.["1"]?.type.name;
