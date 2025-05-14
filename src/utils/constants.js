@@ -39,10 +39,10 @@ const getBasicInfo = (pokemonData, pokedexData) => {
   const feet = meters ? Math.floor(meters * 3.28) : "N/A";
   const inches =
     meters && feet !== "N/A" ? Math.floor(meters * 39.57 - feet * 12) : "N/A";
-  const genus = pokedexData.genera?.find(
+  const genus = pokedexData?.genera?.find(
     (entry) => entry.language.name === "en"
   )?.genus;
-  const pokedex = pokedexData.flavor_text_entries?.find(
+  const pokedex = pokedexData?.flavor_text_entries?.find(
     (entry) => entry.language.name === "en"
   )?.flavor_text;
 
