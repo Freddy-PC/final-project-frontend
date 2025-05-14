@@ -1,11 +1,41 @@
 .trivia {
 }
 .trivia__card {
+  color: white;
   background-color: grey;
-}
-.trivia__header {
+  border-radius: 25px;
+  border: 2px solid black;
+  padding: 50px 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .trivia__info {
+  max-width: 400px;
+}
+.trivia__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.trivia__number {
+  font-size: clamp(12px, 4vw, 20px);
+  line-height: clamp(18px, 6vw, 30px);
+  padding-left: 25px;
+  margin-right: 10px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+.trivia__name {
+  text-transform: capitalize;
+}
+.trivia__background {
+  background-color: black;
+  margin-bottom: 5px;
 }
 .trivia__footer {
+}
+.trivia__pokemon-sprite {
+  margin-left: 50px;
+  width: 30%;
 }

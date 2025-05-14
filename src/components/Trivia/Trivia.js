@@ -6,6 +6,9 @@ import api from "../../utils/pokeapi.js";
 // 1 Call on getSprites from constants.js (no fallback)
 // 2 Call on getValidSprite from pokeapi.js (with fallback)
 import { getBasicInfo, getSprites } from "../../utils/constants";
+import diceIcon from "../../images/dice-icon.svg";
+import shinyIcon from "../../images/shiny-icon.svg";
+// import notShinyIcon from "../../images/not-shiny-icon.svg";
 
 function Trivia() {
   const [data, setData] = useState({});
@@ -41,16 +44,46 @@ function Trivia() {
   return (
     <section className="trivia app__section">
       <div className="trivia__card">
-        <div className="trivia__header">
-          <h2 className="trivia__number">{pokemonId}</h2>
-          <h2 className="trivia__name">{name}</h2>
-        </div>
         <div className="trivia__info">
-          <h2 className="trivia__genus">The {genus}</h2>
-          <h2 className="trivia__pokedex">{pokedex}</h2>
+          <div className="trivia__header">
+            <h2 className="trivia__number trivia__background">
+              No. {pokemonId}
+            </h2>
+            <div className="search__buttons">
+              <button
+                className="button button__shadow-drop button__shadow-drop_white"
+                type="search"
+              >
+                <img
+                  className="button__icon"
+                  src={shinyIcon}
+                  alt="shiny-icon"
+                />
+              </button>
+              <button
+                className="button button__shadow-drop button__shadow-drop_white"
+                type="button"
+              >
+                <img
+                  className="button__icon"
+                  src={diceIcon}
+                  alt="random-icon"
+                />
+              </button>
+            </div>
+          </div>
+          <h2 className="trivia__name trivia__background">{name}</h2>
+          <h2 className="trivia__genus trivia__background">The {genus}</h2>
+          <h2 className="trivia__pokedex trivia__background">{pokedex}</h2>
+          <div className="trivia__footer">
+            {/* Typing, Height and Weight */}
+          </div>
         </div>
-        <div className="trivia__footer"></div>
-        <img src={pokemonSprite} alt={`${name}-front-sprite`} />
+        <img
+          className="trivia__pokemon-sprite"
+          src={pokemonSprite}
+          alt={`${name}-front-sprite`}
+        />
       </div>
     </section>
   );
