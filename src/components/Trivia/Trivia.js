@@ -45,7 +45,7 @@ function Trivia() {
     <section className="trivia app__section">
       <div className="trivia__card">
         <div className="trivia__info">
-          <div className="trivia__header">
+          <div className="trivia__header trivia__big-spacing">
             <h2 className="trivia__number trivia__background">
               No. {pokemonId}
             </h2>
@@ -72,9 +72,15 @@ function Trivia() {
               </button>
             </div>
           </div>
-          <h2 className="trivia__name trivia__background">{name}</h2>
-          <h2 className="trivia__genus trivia__background">The {genus}</h2>
-          <h2 className="trivia__pokedex trivia__background">{pokedex}</h2>
+          <h2 className="trivia__name trivia__background trivia__small-spacing">
+            {name}
+          </h2>
+          <h2 className="trivia__genus trivia__background trivia__small-spacing">
+            The {genus}
+          </h2>
+          <h2 className="trivia__pokedex trivia__background trivia__small-spacing">
+            {pokedex}
+          </h2>
           <div className="trivia__footer">
             {/* Typing, Height and Weight */}
           </div>
