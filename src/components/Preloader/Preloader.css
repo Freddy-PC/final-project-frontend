@@ -3,6 +3,16 @@
   src: url("../../fonts/Inter-Regular.ttf");
 }
 .preloader {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.preloader__spinner--page {
+  margin-bottom: 20px;
+}
+/* spinner style for mobile? (--mobile) */
+.preloader__spinner {
   display: block;
   width: 50px;
   height: 50px;
@@ -10,7 +20,6 @@
   border-bottom-color: #888;
   border-radius: 50%;
   animation: spin 0.75s infinite linear;
-  margin-bottom: 21px;
 }
 .preloader__text {
   font-family: "Inter-Regular", Arial, sans-serif;
