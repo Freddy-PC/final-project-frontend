@@ -10,7 +10,13 @@ import diceIcon from "../../images/dice-icon.svg";
 import shinyIcon from "../../images/shiny-icon.svg";
 // import notShinyIcon from "../../images/not-shiny-icon.svg";
 
-function Trivia({ randomSubmitTrivia, isLoadingImage, pokemonData }) {
+function Trivia({
+  randomSubmitTrivia,
+  isLoadingImage,
+  pokemonData,
+  showShiny,
+  shinyRequest,
+}) {
   const [data, setData] = useState({});
   const [pokemonSprite, setPokemonSprite] = useState({});
   const [pokemonId, setPokemonId] = useState(null);
@@ -21,9 +27,9 @@ function Trivia({ randomSubmitTrivia, isLoadingImage, pokemonData }) {
     if (pokemonData && Object.keys(pokemonData).length > 0) {
       const poke = Array.isArray(pokemonData) ? pokemonData[0] : pokemonData;
       const basicInfo = getBasicInfo(poke, poke.pokedexEntry);
-      const { frontSprite } = getSprites(poke);
+      const { frontSprite, shinyFrontSprite } = getSprites(poke);
 
-      setPokemonSprite(frontSprite);
+      setPokemonSprite({ frontSprite, shinyFrontSprite });
       setData({ ...basicInfo });
       setPokemonId(poke.id);
       return;
@@ -36,9 +42,9 @@ function Trivia({ randomSubmitTrivia, isLoadingImage, pokemonData }) {
     Promise.all([api.getPokemon(id), api.getPokedexEntry(id)])
       .then(([poke, pokedexData]) => {
         const basicInfo = getBasicInfo(poke, pokedexData);
-        const { frontSprite } = getSprites(poke);
+        const { frontSprite, shinyFrontSprite } = getSprites(poke);
 
-        setPokemonSprite(frontSprite);
+        setPokemonSprite({ frontSprite, shinyFrontSprite });
         setData({ ...basicInfo });
       })
       .catch((err) => console.log(err));
@@ -50,7 +56,7 @@ function Trivia({ randomSubmitTrivia, isLoadingImage, pokemonData }) {
   //To-Do:
   // 1 Add Typing, Weight, Height
   // 2 Toggle Different Height and Weight Units (Metric/Imperial)
-  // 3 Dynamically render alt tag from pokemon name
+  // 3 Add Shiny change to image on button click
 
   return (
     <section className="trivia app__section">
@@ -64,6 +70,9 @@ function Trivia({ randomSubmitTrivia, isLoadingImage, pokemonData }) {
               <button
                 className="button button__shadow-drop button__shadow-drop_white"
                 type="button"
+                onClick={(e) => {
+                  shinyRequest(e);
+                }}
               >
                 <img
                   className="button__icon"
@@ -109,7 +118,11 @@ function Trivia({ randomSubmitTrivia, isLoadingImage, pokemonData }) {
         ) : (
           <img
             className="trivia__pokemon-sprite"
-            src={pokemonSprite}
+            src={
+              showShiny
+                ? pokemonSprite.shinyFrontSprite
+                : pokemonSprite.frontSprite
+            }
             alt={`${name}-front-sprite`}
           />
         )}

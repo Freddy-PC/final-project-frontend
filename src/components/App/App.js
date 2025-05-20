@@ -111,7 +111,10 @@ function App() {
         inputRef.current.value = "";
       });
   }
-
+  const [showShiny, setShowShiny] = useState(false);
+  function shinyRequest() {
+    setShowShiny((prev) => !prev);
+  }
   return (
     <div className="app">
       <Header />
@@ -136,6 +139,8 @@ function App() {
         randomSubmitTrivia={randomSubmitTrivia}
         isLoadingImage={isLoadingImage}
         pokemonData={pokemonData}
+        showShiny={showShiny}
+        shinyRequest={shinyRequest}
       />
       <About
         setToggleComponent={setToggleComponent}

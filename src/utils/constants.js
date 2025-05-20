@@ -45,7 +45,7 @@ const getBasicInfo = (pokemonData, pokedexData) => {
   const pokedex = pokedexData?.flavor_text_entries?.find(
     (entry) => entry.language.name === "en"
   )?.flavor_text;
-
+  // console.log(pokemonData);
   return {
     name,
     id,
@@ -80,7 +80,11 @@ const getSprites = (pokemonData) => {
       .back_default ||
     pokemonData.sprites?.back_default ||
     pokemonData.sprites?.front_female;
-  return { frontSprite, backSprite };
+  //Shiny
+  const shinyFrontSprite =
+    pokemonData.sprites?.versions["generation-v"]["black-white"].animated
+      .front_shiny || pokemonData.sprites?.front_shiny;
+  return { frontSprite, backSprite, shinyFrontSprite };
 };
 const secondImageClassName = (backSprite) =>
   `sprite ${backSprite ? "sprite" : "sprite__undefined"} `;
