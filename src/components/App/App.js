@@ -15,7 +15,7 @@ function App() {
   const [query, setQuery] = useState(null); // input
   const [ifToggleResult, setIfToggleResult] = useState(false); // search result
   const [toggleComponent, setToggleComponent] = useState(false);
-  const [isLoading, setIsLoading] = useState(false); // preloader
+  const [isLoadingPage, setIsLoadingPage] = useState(false); // preloader
   const [activeModal, setActiveModal] = useState("");
 
   const [firstColor, setFirstColor] = useState(""); // Style poke-type from array property
@@ -59,7 +59,7 @@ function App() {
 
   function onSubmit(e) {
     e.preventDefault();
-    setIsLoading(true);
+    setIsLoadingPage(true);
     setIfToggleResult(true);
 
     api
@@ -70,14 +70,14 @@ function App() {
       })
       .catch((err) => console.log(err))
       .finally(() => {
-        setIsLoading(false);
+        setIsLoadingPage(false);
         inputRef.current.value = "";
       });
     setPokemonData(""); // Reset data for next search
   }
-  function randomSubmit(e) {
+  function randomSubmitMain(e) {
     e.preventDefault();
-    setIsLoading(true);
+    setIsLoadingPage(true);
     setIfToggleResult(true);
 
     api
@@ -87,9 +87,28 @@ function App() {
       })
       .catch((err) => console.log(err))
       .finally(() => {
-        setIsLoading(false);
+        setIsLoadingPage(false);
         inputRef.current.value = "";
       });
+  }
+  // Trivia
+  // 1 Should I keep here or move to Trivia.js?
+  //   Reusability == Here || Easier set up == Trivia.js
+  const [isLoadingImage, setIsLoadingImage] = useState(false);
+  function randomSubmitTrivia(e) {
+    e.preventDefault();
+    setIsLoadingImage(true);
+
+    // api
+    //   .getRandomPokemon()
+    //   .then((pokearray) => {
+    //     setPokemonData(pokearray);
+    //   })
+    //   .catch((err) => console.log(err))
+    //   .finally(() => {
+    //     setIsLoadingImage(false);
+    //     inputRef.current.value = "";
+    //   });
   }
 
   return (
@@ -99,20 +118,23 @@ function App() {
         value={query}
         searchInput={searchInput}
         onSubmit={onSubmit}
-        randomSubmit={randomSubmit}
+        randomSubmitMain={randomSubmitMain}
         inputRef={inputRef}
       />
 
       {ifToggleResult && (
         <CardData
-          isLoading={isLoading}
+          isLoadingPage={isLoadingPage}
           pokemonData={pokemonData}
           handleClick={handleClick}
           firstColor={firstColor}
           secondColor={secondColor}
         />
       )}
-      <Trivia />
+      <Trivia
+        randomSubmitTrivia={randomSubmitTrivia}
+        isLoadingImage={isLoadingImage}
+      />
       <About
         setToggleComponent={setToggleComponent}
         toggleComponent={toggleComponent}

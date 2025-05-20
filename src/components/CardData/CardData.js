@@ -11,7 +11,7 @@ import "../../utils/constants.css";
 
 function CardData({
   pokemonData,
-  isLoading,
+  isLoadingPage,
   handleClick,
   firstColor,
   secondColor,
@@ -28,10 +28,12 @@ function CardData({
   // Message if no data is retrieved
   return (
     <section className="cards">
-      {isLoading ? (
+      {isLoadingPage ? (
         <>
-          <div className="preloader"></div>
-          <p className="preloader__text">Searching for Pokemon...</p>
+          <div className="preloader">
+            <div className="preloader__spinner preloader__spinner--page"></div>
+            <p className="preloader__text">Searching for Pokemon...</p>
+          </div>
         </>
       ) : (
         <>

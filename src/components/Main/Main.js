@@ -4,7 +4,7 @@ import "../App/App.css";
 import searchIcon from "../../images/search-icon.svg";
 import diceIcon from "../../images/dice-icon.svg";
 
-function Main({ query, searchInput, onSubmit, inputRef, randomSubmit }) {
+function Main({ query, searchInput, onSubmit, inputRef, randomSubmitMain }) {
   return (
     <main className="main app__section">
       <div className="flex-container">
@@ -44,7 +44,7 @@ function Main({ query, searchInput, onSubmit, inputRef, randomSubmit }) {
                 className="button button__random button__shadow-drop button__shadow-drop_black"
                 type="button"
                 onClick={(e) => {
-                  randomSubmit(e);
+                  randomSubmitMain(e);
                 }}
               >
                 <img
