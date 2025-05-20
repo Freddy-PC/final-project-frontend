@@ -40,8 +40,3 @@
 .search__bar:hover {
   border: 2px solid #ffffff;
 }
-.search__buttons {
-  display: flex;
-  gap: 0.5rem;
-  width: 100%;
-}

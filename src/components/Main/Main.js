@@ -28,7 +28,7 @@ function Main({ query, searchInput, onSubmit, inputRef, randomSubmit }) {
               minLength="1"
               maxLength="20"
             ></input>
-            <div className="search__buttons">
+            <div className="buttons">
               <button
                 className="button button__search button__shadow-drop button__shadow-drop_black"
                 type="search"
