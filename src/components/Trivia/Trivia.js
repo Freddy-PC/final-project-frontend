@@ -10,7 +10,7 @@ import diceIcon from "../../images/dice-icon.svg";
 import shinyIcon from "../../images/shiny-icon.svg";
 // import notShinyIcon from "../../images/not-shiny-icon.svg";
 
-function Trivia() {
+function Trivia({ randomSubmitTrivia, isLoadingImage }) {
   const [data, setData] = useState({});
   const [pokemonSprite, setPokemonSprite] = useState({});
   const [pokemonId, setPokemonId] = useState(null);
@@ -64,6 +64,9 @@ function Trivia() {
               <button
                 className="button button__shadow-drop button__shadow-drop_white"
                 type="button"
+                onClick={(e) => {
+                  randomSubmitTrivia(e);
+                }}
               >
                 <img
                   className="button__icon"
@@ -86,11 +89,20 @@ function Trivia() {
             {/* Typing, Height and Weight */}
           </div>
         </div>
-        <img
-          className="trivia__pokemon-sprite"
-          src={pokemonSprite}
-          alt={`${name}-front-sprite`}
-        />
+        {isLoadingImage ? (
+          <>
+            <div className="preloader">
+              <div className="preloader__spinner preloader__spinner--page"></div>
+              <p className="preloader__text">Searching for Pokemon...</p>
+            </div>
+          </>
+        ) : (
+          <img
+            className="trivia__pokemon-sprite"
+            src={pokemonSprite}
+            alt={`${name}-front-sprite`}
+          />
+        )}
       </div>
     </section>
   );

@@ -1,4 +1,7 @@
 .trivia {
+  font-family: "Inter-Bold", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
 }
 .trivia__card {
   color: white;
@@ -8,13 +11,10 @@
   padding: 50px 75px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 .trivia__info {
   max-width: 400px;
-  font-family: "Inter-Bold", Arial, sans-serif;
-  font-style: normal;
-  font-weight: 500;
 }
 .trivia__header {
   display: flex;
@@ -45,9 +45,8 @@
   margin-bottom: 5px;
   padding: 10px 25px 10px 25px;
 }
-.trivia__footer {
-}
+/* .trivia__footer {
+} */
 .trivia__pokemon-sprite {
-  margin-left: 50px;
   width: 30%;
 }
