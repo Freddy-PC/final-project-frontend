@@ -10,32 +10,42 @@ import diceIcon from "../../images/dice-icon.svg";
 import shinyIcon from "../../images/shiny-icon.svg";
 // import notShinyIcon from "../../images/not-shiny-icon.svg";
 
-function Trivia({ randomSubmitTrivia, isLoadingImage }) {
+function Trivia({ randomSubmitTrivia, isLoadingImage, pokemonData }) {
   const [data, setData] = useState({});
   const [pokemonSprite, setPokemonSprite] = useState({});
   const [pokemonId, setPokemonId] = useState(null);
   const randomPokemonIdRef = useRef(Math.floor(Math.random() * 1025) + 1);
 
   useEffect(() => {
+    // If pokemonData is provided (from parent), use it
+    if (pokemonData && Object.keys(pokemonData).length > 0) {
+      const poke = Array.isArray(pokemonData) ? pokemonData[0] : pokemonData;
+      const basicInfo = getBasicInfo(poke, poke.pokedexEntry);
+      const { frontSprite } = getSprites(poke);
+
+      setPokemonSprite(frontSprite);
+      setData({ ...basicInfo });
+      setPokemonId(poke.id);
+      return;
+    }
+
+    // Otherwise, fetch a random Pokémon on mount
     const id = randomPokemonIdRef.current;
     setPokemonId(id);
 
     Promise.all([api.getPokemon(id), api.getPokedexEntry(id)])
-      .then(([pokemonData, pokedexData]) => {
-        // Use getBasicInfo to extract and structure data from pokemonData
-        const basicInfo = getBasicInfo(pokemonData, pokedexData);
-        const { frontSprite } = getSprites(pokemonData);
+      .then(([poke, pokedexData]) => {
+        const basicInfo = getBasicInfo(poke, pokedexData);
+        const { frontSprite } = getSprites(poke);
 
-        setPokemonSprite(frontSprite); // Set the sprite URL
-        setData({
-          ...basicInfo, // Spread the structured data from getBasicInfo
-        });
+        setPokemonSprite(frontSprite);
+        setData({ ...basicInfo });
       })
       .catch((err) => console.log(err));
-  }, []);
+    // Only run on mount or when pokemonData changes
+  }, [pokemonData]);
 
   const { name, genus, pokedex } = data;
-  console.log(data);
 
   //To-Do:
   // 1 Add Typing, Weight, Height

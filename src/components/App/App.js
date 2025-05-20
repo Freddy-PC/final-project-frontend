@@ -20,6 +20,7 @@ function App() {
 
   const [firstColor, setFirstColor] = useState(""); // Style poke-type from array property
   const [secondColor, setSecondColor] = useState("");
+  const [isLoadingImage, setIsLoadingImage] = useState(false);
 
   useEffect(() => {
     const firstType = pokemonData.types?.["0"]?.type.name;
@@ -91,24 +92,24 @@ function App() {
         inputRef.current.value = "";
       });
   }
-  // Trivia
-  // 1 Should I keep here or move to Trivia.js?
-  //   Reusability == Here || Easier set up == Trivia.js
-  const [isLoadingImage, setIsLoadingImage] = useState(false);
+
   function randomSubmitTrivia(e) {
     e.preventDefault();
     setIsLoadingImage(true);
 
-    // api
-    //   .getRandomPokemon()
-    //   .then((pokearray) => {
-    //     setPokemonData(pokearray);
-    //   })
-    //   .catch((err) => console.log(err))
-    //   .finally(() => {
-    //     setIsLoadingImage(false);
-    //     inputRef.current.value = "";
-    //   });
+    // Fetch both Pokémon and pokedex entry
+    const id = Math.floor(Math.random() * 1025) + 1;
+    Promise.all([api.getPokemon(id), api.getPokedexEntry(id)])
+      .then(([poke, pokedexEntry]) => {
+        // Attach pokedexEntry to the poke object
+        poke.pokedexEntry = pokedexEntry;
+        setPokemonData([poke]); // If you expect an array in Trivia.js
+      })
+      .catch((err) => console.log(err))
+      .finally(() => {
+        setIsLoadingImage(false);
+        inputRef.current.value = "";
+      });
   }
 
   return (
@@ -134,6 +135,7 @@ function App() {
       <Trivia
         randomSubmitTrivia={randomSubmitTrivia}
         isLoadingImage={isLoadingImage}
+        pokemonData={pokemonData}
       />
       <About
         setToggleComponent={setToggleComponent}
