@@ -40,6 +40,7 @@ function Trivia() {
   //To-Do:
   // 1 Add Typing, Weight, Height
   // 2 Toggle Different Height and Weight Units (Metric/Imperial)
+  // 3 Dynamically render alt tag from pokemon name
 
   return (
     <section className="trivia app__section">
@@ -49,10 +50,10 @@ function Trivia() {
             <h2 className="trivia__number trivia__background">
               No. {pokemonId}
             </h2>
-            <div className="search__buttons">
+            <div className="buttons">
               <button
                 className="button button__shadow-drop button__shadow-drop_white"
-                type="search"
+                type="button"
               >
                 <img
                   className="button__icon"
