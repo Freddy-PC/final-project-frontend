@@ -38,12 +38,16 @@
 .trivia__background {
   background-color: black;
 }
-.trivia__big-spacing {
+.trivia__spacing--start {
   margin-bottom: 12px;
 }
-.trivia__small-spacing {
+.trivia__spacing--middle {
   margin-bottom: 5px;
   padding: 10px 25px 10px 25px;
+}
+.trivia__spacing--end {
+  margin-bottom: 12px;
+  padding: 10px 25px 30px 25px;
 }
 /* .trivia__footer {
 } */

@@ -46,7 +46,7 @@ function Trivia({ randomSubmitTrivia, isLoadingImage }) {
     <section className="trivia app__section">
       <div className="trivia__card">
         <div className="trivia__info">
-          <div className="trivia__header trivia__big-spacing">
+          <div className="trivia__header trivia__spacing--start">
             <h2 className="trivia__number trivia__background">
               No. {pokemonId}
             </h2>
@@ -76,13 +76,13 @@ function Trivia({ randomSubmitTrivia, isLoadingImage }) {
               </button>
             </div>
           </div>
-          <h2 className="trivia__name trivia__background trivia__small-spacing">
+          <h2 className="trivia__name trivia__background trivia__spacing trivia__spacing--middle">
             {name}
           </h2>
-          <h2 className="trivia__genus trivia__background trivia__small-spacing">
+          <h2 className="trivia__genus trivia__background trivia__spacing trivia__spacing--middle">
             The {genus}
           </h2>
-          <h2 className="trivia__pokedex trivia__background trivia__small-spacing">
+          <h2 className="trivia__pokedex trivia__background trivia__spacing trivia__spacing--end">
             {pokedex}
           </h2>
           <div className="trivia__footer">
