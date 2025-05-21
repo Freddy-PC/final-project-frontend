@@ -141,6 +141,8 @@ function App() {
         pokemonData={pokemonData}
         showShiny={showShiny}
         shinyRequest={shinyRequest}
+        firstColor={firstColor}
+        secondColor={secondColor}
       />
       <About
         setToggleComponent={setToggleComponent}
